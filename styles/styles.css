@@ -1,0 +1,304 @@
+#titre img 
+  {
+    width:100%; 
+    height:250px;
+    left: 0.5%;
+    right:0.5%;
+  }
+
+footer 
+  {
+    height: 100px;
+    bottom:0;
+    background-color: #000000;
+    height:100px;
+    width:100%;
+    left:0.5%;
+    bottom:0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 0;
+  }
+
+footer p
+  {
+    text-align: right;
+    color: white;
+  } 
+
+footer ul 
+  {
+    list-style:none;
+  }
+
+footer a 
+  {
+    font-family: times;
+    font-size: 100%;
+    padding-left:30px;
+    padding-right:30px;
+    color:white;
+  }
+
+#follow a img 
+  {
+    align-items: left;
+    height: 50px;
+    width: 50px;
+  }
+  
+#inscription
+    {
+      margin-bottom: 200px;
+      margin-top: 150px;
+      vertical-align: middle;
+    }
+    
+img .Logo 
+    {
+      width: 90;
+      height: 90;
+    }
+
+#connexion_inscription table
+    {
+    width:100%;
+    padding: auto;
+    margin-right:10%;
+    margin-left:10%;
+  }
+
+
+
+/* Menu DÃ©roulant */
+
+
+#menu_deroulant, #menu_deroulant ul /* Liste */     
+{
+        
+        width:100%;
+        padding : 0; /* pas de marge intÃ©rieure */
+        margin : 0; /* ni extÃ©rieure */
+        list-style : none; /* on supprime le style par dÃ©faut de la liste */
+        line-height : 10px; /* on dÃ©finit une hauteur pour chaque Ã©lÃ©ment */
+        text-align : center; /* on centre le texte qui se trouve dans la liste */
+}
+
+#menu_deroulant /* Ensemble du menu */
+{
+         
+        text-align: center;
+        width: 100%;
+        font-weight : bold; /* on met le texte en gras */
+        font-family : Arial; /* on utilise Arial */
+        font-size : 12px; /* hauteur du texte : 12 pixels */
+}
+
+#menu_deroulant a /* Contenu des listes */
+{   
+       
+        display : block; /* on change le type d'Ã©lÃ©ment, les liens deviennent des balises de type block */
+        padding : 20px; /* aucune marge intÃ©rieure */
+        background : red; /* couleur de fond */        
+        color : white; /* couleur du texte */
+        text-decoration : none; /* on supprime le style par dÃ©faut des liens */
+        width : 175px; /* largeur */
+}
+
+#menu_deroulant li /* Ã‰lÃ©ments des listes */
+{ 
+       
+        float : left; 
+        /* pour IE qui ne reconnaÃ®t pas "transparent" */
+        border-right : 1px solid #fff; /* on met une bordure blanche Ã  droite de chaque Ã©lÃ©ment */
+}
+
+/* IE ne reconnaissant pas le sÃ©lecteur ">" */
+html>body #menu_deroulant li
+{
+        border-right: 1px solid transparent ; /* on met une bordure transparente Ã  droite de chaque Ã©lÃ©ment */
+}
+
+#menu_deroulant li ul /* Sous-listes */
+{ 
+         z-index: 1;
+        position: absolute; /* Position absolue */
+        width: 144px; /* Largeur des sous-listes */
+        left: -999em; /* On envoie loin du champ de vision */
+}
+
+
+#menu_deroulant li ul li /* ElÃ©ments de sous-listes */
+{
+        /* pour ie qui ne reconnaÃ®t pas "transparent" */
+        border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque Ã©lÃ©ment d'une sous-liste */
+}
+
+/* IE ne reconnaissant pas le sÃ©lecteur ">" */
+html>body #menu_deroulant li ul li                
+{
+        border-top : 1px solid transparent; /* on met une bordure transparente en haut de chaque Ã©lÃ©ment */
+}
+
+#menu_deroulant li ul ul 
+{
+        
+        margin    : -22px 0 0 144px ; /* On dÃ©cale les sous-sous-listes pour qu'elles ne soient pas au dessus des sous-listes */ 
+        /* pour IE qui ne reconnaÃ®t pas "transparent" (comme prÃ©cÃ©demment) */
+        border-left     : 1px solid #fff ; /* Petite bordure Ã  gauche pour ne pas coller ... */      
+}
+
+/* IE ne reconnaissant pas le sÃ©lecteur ">" */
+html>body #menu_deroulant li ul ul                
+{
+        border-left     : 1px solid transparent ; /* on met une bordure transparente sur la gauche de chaque Ã©lÃ©ment */
+}
+
+#menu_deroulant li:hover ul ul, #menu_deroulant li.sfhover ul ul /* Sous-sous-listes lorsque la souris passe sur un Ã©lÃ©ment de liste */
+{
+         z-index: 1;
+        left: -999em; /* On expÃ©die les sous-sous-listes hors du champ de vision */
+}
+
+#menu_deroulant li:hover ul, #menu_deroulant li li:hover ul, #menu_deroulant li.sfhover ul, #menu_deroulant li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un Ã©lÃ©ment de liste ET sous-sous-lites lorsque la souris passe sur un Ã©lÃ©ment de sous-liste */
+{
+        left: auto; /* Repositionnement normal */
+        min-height: 0; /* Corrige un bug sous IE */
+}
+
+
+/* Fin Menu DÃ©roulant */
+
+
+/* Images dÃ©filantes */
+
+/* images dans le diapo */
+.image_diapo {
+     z-index: 3;
+    width : 100%;
+    height : 500px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+}
+
+/* Bouttons suivant et prÃ©cÃ©dent */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position du boutton suivant sur la droite */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, ajoute un background noir */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text_diapo {
+  color: black;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* numÃ©ro de l'a diapo'image */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* points/sÃ©lecteurs sous l'image */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* animation "fading" */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+/* Fin Images dÃ©filantes */
+
+
+.bouton p a {
+display:block;
+width:150px;
+line-height:50px;
+text-align:center;
+vertical-align:middle;
+background:url(images/bouton_noir.png) no-repeat;
+color:white;
+text-decoration:none;
+}
+.bouton p a:hover {
+background:url(images/bouton_noir_2.png) no-repeat;
+}
+
+.tableau {
+  background-color: white;
+  
+}
+
+
+a.top {
+   position:fixed;
+   vertical-align: bottom;
+   
+}
+
+body {
+    
+    background-attachment: fixed;
+    background-size: cover; 
+} 
