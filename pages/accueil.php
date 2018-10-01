@@ -95,19 +95,19 @@ require('outils.php') ;
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
           <img src="../images/1.PNG" class="image_diapo">
-          <div class="text_diapo">DTM - Fast Lap</div>
+          <div class="text_diapo">#</div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
           <img src="../images/2.PNG" class="image_diapo">
-          <div class="text_diapo">Quadrocopter Video Next</div>
+          <div class="text_diapo">#</div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
           <img src="../images/8.PNG" class="image_diapo">
-          <div class="text_diapo">PUSTEFIX - Large Tube rainbow bubbles</div>
+          <div class="text_diapo">#</div>
         </div>
         
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -156,7 +156,7 @@ require('outils.php') ;
     
     </p>
 
-    <div width=90% boder=1><H1>Actualités</H1><H3>Découvrez nos nouvelles gammes de circuits!</H3><p>Stock renouvelé toutes les semaines. Merci de réserver sur le site et passer en magasin pour régler et emporter votre commande.</p></div>
+    <div width=90% boder=1><H1>Actualités</H1><H3>Découvrez nos nouvelles gammes de costumes !</H3><p>Stock renouvelé toutes les semaines.</p></div>
     <br>
     <p>
         <h1>
@@ -191,62 +191,9 @@ require('outils.php') ;
 
     <footer>
 
-      
-        <table align="center">
-
-        <tr>
-
-          <td>
-
-            <div id="follow">
-
-              <a href="https://www.facebook.com" target="_blank"> <img src="../images/LogoFB.png" class="logo" /></a>
-
-              <a href="https://www.youtube.com" target="_blank"> <img src="../images/LogoYT.png" class="logo" /></a>
-
-              <a href="https://www.instagram.com" target="_blank"> <img src="../images/LogoInsta.png" class="logo" /></a>
-
-            </div>
-
-          </td>
-
-              <td>
-
-                <ul>
-
-                    <li><a href="http://www.hei.fr/" target="_blank"> Mentions légales </a></li>
-
-                  </ul>
-
-              </td>
-
-              <td>
-
-                  <ul>
-
-                    <li><a href="aide.php">Besoin&nbsp;d&#145;aide&nbsp;?</a></li>
-
-                  </ul>
-
-              </td>
-
-              <td>
-
-                <ul>
-
-                  <li><a href="InfoCarrera.html">Information sur la marque</a></li>
-
-          </tr>
-
-      </table>   
-
-<body background="../images/briquequalite.jpg">
-
-
-
-      <p>Mise &agrave; jour : 18/05/2018</p>
-
-       
+       <?php
+        afficheFooter();
+    ?>  
 
     </footer> <!-- fin du pied de page -->
 

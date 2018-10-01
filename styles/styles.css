@@ -99,7 +99,7 @@ img .Logo
        
         display : block; /* on change le type d'Ã©lÃ©ment, les liens deviennent des balises de type block */
         padding : 20px; /* aucune marge intÃ©rieure */
-        background : red; /* couleur de fond */        
+        background : black; /* couleur de fond */        
         color : white; /* couleur du texte */
         text-decoration : none; /* on supprime le style par dÃ©faut des liens */
         width : 175px; /* largeur */

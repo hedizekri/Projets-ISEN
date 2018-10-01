@@ -17,7 +17,7 @@ $connexion = mysqli_connect("localhost","ndc1as6-10","3qpbvlV", "ndc1as6-10");
 
 function afficheTitre() {
 
-    echo '<a href="accueil.php"><img center src="../images/logo.jpg" class="logo_titre"></a>';
+    echo '<a href="accueil.php"><img center src="../images/logo.png" class="logo_titre"></a>';
 
 }
 
@@ -82,11 +82,11 @@ echo '
 
             <div id="follow">
 
-              <a href="https://www.facebook.com/CarreraGlobal/?brand_redir=91665879961" target="_blank"> <img src="../images/LogoFB.png" class="logo" /></a>
+              <a href="https://www.facebook.com" target="_blank"> <img src="../images/LogoFB.png" class="logo" /></a>
 
-              <a href="https://www.youtube.com/user/CarreraAutorennbahn" target="_blank"> <img src="../images/LogoYT.png" class="logo" /></a>
+              <a href="https://www.youtube.com" target="_blank"> <img src="../images/LogoYT.png" class="logo" /></a>
 
-              <a href="https://www.instagram.com/carrera.official/" target="_blank"> <img src="../images/LogoInsta.png" class="logo" /></a>
+              <a href="https://www.instagram.com" target="_blank"> <img src="../images/LogoInsta.png" class="logo" /></a>
 
             </div>
 
@@ -96,7 +96,7 @@ echo '
 
                 <ul>
 
-                    <li><a href="http://www.hei.fr/" target="_blank"> Mentions légales </a></li>
+                    <li><a href="http://www.isen.fr/" target="_blank"> Mentions légales </a></li>
 
                   </ul>
 
@@ -120,7 +120,7 @@ echo '
 
           </tr>
 
-      </table>   
+      </table>
 
 <body background="../images/briquequalite.jpg">
 
