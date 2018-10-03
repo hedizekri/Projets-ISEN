@@ -116,7 +116,7 @@ echo '
 
                 <ul>
 
-                  <li><a href="InfoCarrera.html">Information sur la marque</a></li>
+                  <li><a href="Infosap2lux.html">Information sur la marque</a></li>
 
           </tr>
 

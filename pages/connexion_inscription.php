@@ -15,7 +15,7 @@ require('outils.php') ;
 
 <head>
 
-  <title>Carrera</title>
+  <title>Sap2Lux</title>
   <script type="text/javascript" src="fonctions.js" language="javascript"></script>
   <meta charset="utf-8" />
 
@@ -176,7 +176,7 @@ require('outils.php') ;
         <br/>
         <br/>
 
-        <input type="checkbox" name="newsletter" value="1"/> Je souhaite recevoir les promotions Carrera par mail
+        <input type="checkbox" name="newsletter" value="1"/> Je souhaite recevoir les promotions Sap2lux par mail
 
         <br/>
         <br/>

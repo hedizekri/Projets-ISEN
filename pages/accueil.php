@@ -14,7 +14,7 @@ require('outils.php') ;
 
 <head>
 
-  <title>Carrera</title>
+  <title>Sap2lux</title>
 
   <meta charset="utf-8" />
 
@@ -94,20 +94,20 @@ require('outils.php') ;
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
-          <img src="../images/1.PNG" class="image_diapo">
-          <div class="text_diapo">#</div>
+          <img src="../images/suit.jpg" class="image_diapo">
+          <div class="text_diapo">Costume</div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
-          <img src="../images/2.PNG" class="image_diapo">
-          <div class="text_diapo">#</div>
+          <img src="../images/pantalon.jpg" class="image_diapo">
+          <div class="text_diapo">Pantalon</div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
-          <img src="../images/8.PNG" class="image_diapo">
-          <div class="text_diapo">#</div>
+          <img src="../images/chaussure.jpg" class="image_diapo">
+          <div class="text_diapo">Chaussures</div>
         </div>
         
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

@@ -70,17 +70,17 @@ img .Logo
 
 
 
-/* Menu DÃ©roulant */
+/* Menu Deroulant */
 
 
 #menu_deroulant, #menu_deroulant ul /* Liste */     
 {
         
         width:100%;
-        padding : 0; /* pas de marge intÃ©rieure */
-        margin : 0; /* ni extÃ©rieure */
-        list-style : none; /* on supprime le style par dÃ©faut de la liste */
-        line-height : 10px; /* on dÃ©finit une hauteur pour chaque Ã©lÃ©ment */
+        padding : 0; /* pas de marge interieure */
+        margin : 0; /* ni exterieure */
+        list-style : none; /* on supprime le style par defaut de la liste */
+        line-height : 10px; /* on definit une hauteur pour chaque element */
         text-align : center; /* on centre le texte qui se trouve dans la liste */
 }
 
@@ -97,26 +97,26 @@ img .Logo
 #menu_deroulant a /* Contenu des listes */
 {   
        
-        display : block; /* on change le type d'Ã©lÃ©ment, les liens deviennent des balises de type block */
-        padding : 20px; /* aucune marge intÃ©rieure */
+        display : block; /* on change le type d'element, les liens deviennent des balises de type block */
+        padding : 20px; /* aucune marge interieure */
         background : black; /* couleur de fond */        
         color : white; /* couleur du texte */
-        text-decoration : none; /* on supprime le style par dÃ©faut des liens */
+        text-decoration : none; /* on supprime le style par defaut des liens */
         width : 175px; /* largeur */
 }
 
-#menu_deroulant li /* Ã‰lÃ©ments des listes */
+#menu_deroulant li /* Ã‰lements des listes */
 { 
        
         float : left; 
         /* pour IE qui ne reconnaÃ®t pas "transparent" */
-        border-right : 1px solid #fff; /* on met une bordure blanche Ã  droite de chaque Ã©lÃ©ment */
+        border-right : 1px solid #fff; /* on met une bordure blanche Ã  droite de chaque element */
 }
 
-/* IE ne reconnaissant pas le sÃ©lecteur ">" */
+/* IE ne reconnaissant pas le selecteur ">" */
 html>body #menu_deroulant li
 {
-        border-right: 1px solid transparent ; /* on met une bordure transparente Ã  droite de chaque Ã©lÃ©ment */
+        border-right: 1px solid transparent ; /* on met une bordure transparente Ã  droite de chaque element */
 }
 
 #menu_deroulant li ul /* Sous-listes */
@@ -128,66 +128,66 @@ html>body #menu_deroulant li
 }
 
 
-#menu_deroulant li ul li /* ElÃ©ments de sous-listes */
+#menu_deroulant li ul li /* Elements de sous-listes */
 {
         /* pour ie qui ne reconnaÃ®t pas "transparent" */
-        border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque Ã©lÃ©ment d'une sous-liste */
+        border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque element d'une sous-liste */
 }
 
-/* IE ne reconnaissant pas le sÃ©lecteur ">" */
+/* IE ne reconnaissant pas le selecteur ">" */
 html>body #menu_deroulant li ul li                
 {
-        border-top : 1px solid transparent; /* on met une bordure transparente en haut de chaque Ã©lÃ©ment */
+        border-top : 1px solid transparent; /* on met une bordure transparente en haut de chaque element */
 }
 
 #menu_deroulant li ul ul 
 {
         
-        margin    : -22px 0 0 144px ; /* On dÃ©cale les sous-sous-listes pour qu'elles ne soient pas au dessus des sous-listes */ 
-        /* pour IE qui ne reconnaÃ®t pas "transparent" (comme prÃ©cÃ©demment) */
+        margin    : -22px 0 0 144px ; /* On decale les sous-sous-listes pour qu'elles ne soient pas au dessus des sous-listes */ 
+        /* pour IE qui ne reconnaÃ®t pas "transparent" (comme precedemment) */
         border-left     : 1px solid #fff ; /* Petite bordure Ã  gauche pour ne pas coller ... */      
 }
 
-/* IE ne reconnaissant pas le sÃ©lecteur ">" */
+/* IE ne reconnaissant pas le selecteur ">" */
 html>body #menu_deroulant li ul ul                
 {
-        border-left     : 1px solid transparent ; /* on met une bordure transparente sur la gauche de chaque Ã©lÃ©ment */
+        border-left     : 1px solid transparent ; /* on met une bordure transparente sur la gauche de chaque element */
 }
 
-#menu_deroulant li:hover ul ul, #menu_deroulant li.sfhover ul ul /* Sous-sous-listes lorsque la souris passe sur un Ã©lÃ©ment de liste */
+#menu_deroulant li:hover ul ul, #menu_deroulant li.sfhover ul ul /* Sous-sous-listes lorsque la souris passe sur un element de liste */
 {
          z-index: 1;
-        left: -999em; /* On expÃ©die les sous-sous-listes hors du champ de vision */
+        left: -999em; /* On expedie les sous-sous-listes hors du champ de vision */
 }
 
-#menu_deroulant li:hover ul, #menu_deroulant li li:hover ul, #menu_deroulant li.sfhover ul, #menu_deroulant li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un Ã©lÃ©ment de liste ET sous-sous-lites lorsque la souris passe sur un Ã©lÃ©ment de sous-liste */
+#menu_deroulant li:hover ul, #menu_deroulant li li:hover ul, #menu_deroulant li.sfhover ul, #menu_deroulant li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un element de liste ET sous-sous-lites lorsque la souris passe sur un element de sous-liste */
 {
         left: auto; /* Repositionnement normal */
         min-height: 0; /* Corrige un bug sous IE */
 }
 
 
-/* Fin Menu DÃ©roulant */
+/* Fin Menu Deroulant */
 
 
-/* Images dÃ©filantes */
+/* Images defilantes */
 
 /* images dans le diapo */
 .image_diapo {
      z-index: 3;
     width : 100%;
-    height : 500px;
+    height : 100%;
 }
 
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 700px;
+  max-width: 30%;
   position: relative;
   margin: auto;
 }
 
-/* Bouttons suivant et prÃ©cÃ©dent */
+/* Bouttons suivant et precedent */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -224,7 +224,7 @@ html>body #menu_deroulant li ul ul
   text-align: center;
 }
 
-/* numÃ©ro de l'a diapo'image */
+/* numero de la diapo image */
 .numbertext {
   color: black;
   font-size: 12px;
@@ -233,7 +233,7 @@ html>body #menu_deroulant li ul ul
   top: 0;
 }
 
-/* points/sÃ©lecteurs sous l'image */
+/* points/selecteurs sous l'image */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -268,7 +268,7 @@ html>body #menu_deroulant li ul ul
 }
 
 
-/* Fin Images dÃ©filantes */
+/* Fin Images defilantes */
 
 
 .bouton p a {

@@ -9,7 +9,7 @@ require ('outils.php');
 <html>
 
 <head>
-  <title>Carrera</title>
+  <title>Sap2lux</title>
   <meta charset="utf-8" />
 
 
@@ -56,7 +56,7 @@ require ('outils.php');
      
      <tr>
      
-    <td> <center><iframe src="https://www.google.com/maps/embed?pb" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></center> </td> 
+    <td> <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.61971792433!2d3.0465229152651183!3d50.63418087950117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sISEN+Lille!5e0!3m2!1sfr!2sfr!4v1538589946729" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></center> </td> 
     
     
     
