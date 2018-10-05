@@ -78,8 +78,10 @@ require('outils.php') ;
     <!--                 CONTENU                                 -->
 
     <!-- ******************************************************* -->
-
-    
+    <div id="presentation_marque">
+    <h1>Sap2lux, le plus chic de l'urbain.</h1>
+    <p>Sap2lux est l'alliance entre la connaissance de la haute couture et l'experience de la rue. Cette entreprise fondée par quatre jeunes auto-entrepreneurs Lillois à su très rapidement conquérir une place de référence dans le milieu du stylisme en France.</p> 
+    </div>
 
          
 
