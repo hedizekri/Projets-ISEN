@@ -51,10 +51,10 @@ echo
           <td><li>
                 <a href="#">Par Type</a>
                 <ul>
-                        <li><a href="chaussures.php">Chaussures</a></li>
-                        <li><a href="costumes.php">Costumes</a></li>
+                        <li><a href="chaussures.php">Costumes</a></li>
+                        <li><a href="costumes.php">Pantalons</a></li>
                         <li><a href="pulls.php">Pulls</a></li>              
-                        <li><a href="pantalons.php">Pantalons</a></li>
+                        <li><a href="pantalons.php">Chaussures</a></li>
                 </ul>
         </li></td>
            
@@ -116,7 +116,19 @@ echo '
 
                 <ul>
 
-                  <li><a href="informations_marque.php">Information sur la marque</a></li>
+                  <li><a href="informations_marque.php">Informations sur la marque</a></li>
+                </ul>
+              </td>
+              
+              <td>
+               <ul>
+                <li>
+          
+                    <a href="#" class="top">Haut de page</a>
+                </li>
+               </ul>
+          
+              </td>
 
           </tr>
 
