@@ -15,7 +15,7 @@ require('outils.php') ;
 
 <head>
 
-  <title>Sap2Lux</title>
+  <title>Sap2lux</title>
   <script type="text/javascript" src="fonctions.js" language="javascript"></script>
   <meta charset="utf-8" />
 
@@ -118,7 +118,7 @@ require('outils.php') ;
      
  </td>
  <td>
-      <form method="Post" action="extraction_formulaire.php">
+      <form method="Post" action="inscription.php">
 
 
         <h2> Inscription </h2>

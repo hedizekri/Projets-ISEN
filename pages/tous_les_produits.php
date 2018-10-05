@@ -81,73 +81,36 @@ require('outils.php') ;
     <div id="contenu">
     <h1>Tous les produits</h1>
     <hr />
-    <?php
     
-      // appel de la fonction de connexion
+    <?php
+
+    // appel de la fonction de connexion
     $connexion = mysqli_connect("localhost","root","", "sap2lux");
 
-  //on test la connexion
-  if (!$connexion){
-    die("Connexion impossible : ".mysqli_connect_error($connexion));
-  }
-  mysqli_set_charset($connexion,"utf-8");
-
-      
-      $codeSQL ="SELECT IDvetement, titre,photo,prix,texte from vetement" ;
+      //on test la connexion
+      if (!$connexion){
+        die("Connexion impossible : ".mysqli_connect_error($connexion));
+      }
 
 
-      /* Modification du jeu de résultats en utf8 */
+      // Modification du jeu de résultats en utf8
       mysqli_set_charset($connexion, 'utf8');
+
+      // Création de la requête
+      $codeSQL ="SELECT IDvetement,nom,photo,prix,texte from vetements" ;
 
       // lancement effectif de la requête SQL 
       $resultat = mysqli_query($connexion,$codeSQL);
       
-      // si jamais la requête se passait mal      
-      if ( ! $resultat ) 
-        die ("Requete SQL invalide : " . mysqli_error($connexion));
-      
-      // on teste le nombre de réponse de la requet
-      $nombreLigne = mysqli_num_rows($resultat) ;
-      
-      
-      if ( $nombreLigne > 0 )
-        {
-                    
-          // debut du  tableau avec ligne d'entete
-          
-          echo '<table border="1" cellpadding="10">';
-          echo '<tr>';
-          echo '<th>titre</th>';
-          echo '<th>photo</th>';
-          echo '<th>prix</th>';
-          echo '<th>commentaires</th>';
-          echo '</tr>';
-          
-          
-          // itération pour chaque ligne de résultat récupérée  
-          while ($ligneResultat = mysqli_fetch_assoc($resultat)) 
-          {
-            echo "<tr>" ;
-            echo "<td>".$ligneResultat["titre"]."</td>"; 
-            echo "<td>".$ligneResultat["photo"]."</td>"; 
-            echo "<td>".$ligneResultat["prix"]."</td>";
-            echo "<td>".$ligneResultat["texte"]."</td>";
-
-            echo "</tr>";
-          }  
-          
-          // fin tableau
-          echo "</table>";
-
-        }
-      else
-        {
-          echo "<h2>Pas d'annonces dans cette cat&eacute;gorie !</h2>"; 
-        } 
+        // si jamais la requête se passait mal      
+        if ( ! $resultat ) 
+          die ("Requete SQL invalide : " . mysqli_error($connexion));
         
-    ?>  
+        // on teste le nombre de réponse de la requet
+        $nombreLigne = mysqli_num_rows($resultat) ;
 
-        </div> <!-- fin contenu -->
+    ?>
+    </div> <!-- fin contenu -->
 
 
 
