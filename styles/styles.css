@@ -1,3 +1,7 @@
+body {
+    background-color: #e7e1d6;
+}
+
 #titre img 
   {
     width:100%; 
@@ -9,15 +13,13 @@
 footer 
   {
     height: 100px;
-    bottom:0;
     background-color: #1B1100;
-    height:100px;
+    height:80px;
     width:100%;
-    left:0.5%;
     bottom:0px;
+    left: 0,5%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    margin-bottom: 0;
     position : fixed;
   }
 
@@ -30,19 +32,23 @@ footer p
 footer ul 
   {
     list-style:none;
+    padding-top: 2%;
   }
 
 footer a 
   {
-    font-family: times;
-    font-size: 100%;
+    font-family: Palatino Linotype;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 170%;
     padding-left:30px;
     padding-right:30px;
-    color:white;
+    color: #d6c2a0;
   }
 
 #follow a img 
   {
+    padding-top: 5%;
     align-items: left;
     height: 50px;
     width: 50px;
@@ -60,6 +66,10 @@ img .Logo
       width: 90;
       height: 90;
     }
+
+#hautdepage {
+    height: 20%;
+}
 
 #connexion_inscription table
     {

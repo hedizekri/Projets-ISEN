@@ -96,7 +96,7 @@ echo '
 
                 <ul>
 
-                    <li><a href="http://www.isen.fr/" target="_blank"> Mentions légales </a></li>
+                    <li><a href="http://www.isen.fr/" target="_blank">Mentions légales</a></li>
 
                   </ul>
 
@@ -124,7 +124,7 @@ echo '
                <ul>
                 <li>
           
-                    <a href="#" class="top">Haut de page</a>
+                    <a href="#" class="top"><img src="../images/top.png" id="hautdepage" /></a>
                 </li>
                </ul>
           
