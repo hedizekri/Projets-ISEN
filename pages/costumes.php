@@ -80,7 +80,7 @@ require('outils.php') ;
 
     <div id="contenu">
     <div id="contenu">
-    <h1>Chaussures</h1>
+    <h1>Costumes</h1>
     <hr />
     
 
