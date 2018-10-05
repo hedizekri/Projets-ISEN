@@ -305,7 +305,8 @@ body {
 
 /* Informations_marque */
 
-#presentation_marque {
+#presentation_marque 
+{
     text-align: left;
     padding-right: 50%;
     font-family: calibri;
@@ -313,4 +314,12 @@ body {
     color: #2E1E01;
     font-style: italic;
     font-weight : 300;
+    padding-bottom: 5%;
 }
+
+#clem_pres {
+    width: 12%;
+    float: right;
+    padding-top: 4%;
+    padding-right: 30%;
+    }
