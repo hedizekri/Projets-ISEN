@@ -4,7 +4,7 @@
 function cnxDB() {
 
 
-$connexion = mysqli_connect("localhost","ndc1as6-10","3qpbvlV", "ndc1as6-10");
+$connexion = mysqli_connect("localhost","root","", "sap2lux");
 
   //on test la connexion
   if (!$connexion){
@@ -41,8 +41,8 @@ echo
                <li>
                 <a href="#">Homme / Femme</a>
                 <ul>
-                        <li><a href="circuits.php">Homme</a></li>
-                        <li><a href="voitures.php">Femme</a></li>
+                        <li><a href="homme.php">Homme</a></li>
+                        <li><a href="femme.php">Femme</a></li>
                 </ul>
         </li>
           <td>
@@ -51,10 +51,10 @@ echo
           <td><li>
                 <a href="#">Par Type</a>
                 <ul>
-                        <li><a href="0_5.php">Chaussures</a></li>
-                        <li><a href="5_12.php">Costumes</a></li>
-                        <li><a href="12.php">Pulls</a></li>              
-                        <li><a href="12.php">Pantalons</a></li>
+                        <li><a href="chaussures.php">Chaussures</a></li>
+                        <li><a href="costumes.php">Costumes</a></li>
+                        <li><a href="pulls.php">Pulls</a></li>              
+                        <li><a href="pantalons.php">Pantalons</a></li>
                 </ul>
         </li></td>
            

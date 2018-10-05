@@ -83,15 +83,15 @@ require('outils.php') ;
     <hr />
     <?php
     
-    $choix = 1 ;
+    $choix = 5 ;
 
 
-     $codeSQL ="SELECT IDjouet, titre,photo,prix,texte from jouet
+     $codeSQL ="SELECT IDvetement, titre,photo,prix,texte from vetement
       inner join categorie 
-            on jouet.IDcategorie=categorie.IDcategorie 
-            where jouet.idcategorie = '" . $choix . "'"; 
+            on vetement.IDcategorie=categorie.IDcategorie 
+            where vetement.idcategorie = '" . $choix . "'"; 
 
-      $connexion = mysqli_connect("localhost","ndc1as6-10","3qpbvlV", "ndc1as6-10");
+      $connexion = mysqli_connect("localhost","root","", "sap2lux");
 
 	//on test la connexion
 	if (!$connexion){
