@@ -116,7 +116,7 @@ echo '
 
                 <ul>
 
-                  <li><a href="informatios_marque.html">Information sur la marque</a></li>
+                  <li><a href="informations_marque.html">Information sur la marque</a></li>
 
           </tr>
 
