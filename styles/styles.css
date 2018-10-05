@@ -10,13 +10,12 @@ footer
   {
     height: 100px;
     background-color: #1B1100;
-    height:100px;
+    height:80px;
     width:100%;
-    left:0.5%;
     bottom:0px;
+    left: 0,5%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    margin-bottom: 0;
     position : fixed;
   }
 
