@@ -97,7 +97,7 @@ require('outils.php') ;
       mysqli_set_charset($connexion, 'utf8');
 
       // Création de la requête
-      $codeSQL ="SELECT IDvetement,titre,photo,prix,texte from vetement" ;
+      $codeSQL ="SELECT IDvetement,nom,photo,prix,texte from vetements" ;
 
       // lancement effectif de la requête SQL 
       $resultat = mysqli_query($connexion,$codeSQL);
