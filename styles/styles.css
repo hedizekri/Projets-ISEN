@@ -10,7 +10,7 @@ footer
   {
     height: 100px;
     bottom:0;
-    background-color: #000000;
+    background-color: #1B1100;
     height:100px;
     width:100%;
     left:0.5%;
@@ -18,6 +18,7 @@ footer
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-bottom: 0;
+    position : fixed;
   }
 
 footer p
@@ -292,20 +293,22 @@ background:url(images/bouton_noir_2.png) no-repeat;
 
 
 a.top {
-   position:fixed;
-   vertical-align: bottom;
-   
+    position:fixed;
+    vertical-align: bottom;
+    
 }
 
 body {
     
     background-attachment: fixed;
     background-size: cover; 
+    padding-bottom: 5%;
 } 
 
 /* Informations_marque */
 
-#presentation_marque {
+#presentation_marque 
+{
     text-align: left;
     padding-right: 50%;
     font-family: calibri;
@@ -313,4 +316,12 @@ body {
     color: #2E1E01;
     font-style: italic;
     font-weight : 300;
+    padding-bottom: 5%;
 }
+
+#clem_pres {
+    width: 12%;
+    float: right;
+    padding-top: 4%;
+    padding-right: 30%;
+    }

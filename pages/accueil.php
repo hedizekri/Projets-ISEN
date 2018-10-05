@@ -151,8 +151,6 @@ require('outils.php') ;
         }
         </script>
     
-    <a href="#" class="top">Haut de page</a>
-    
     
     </p>
 
