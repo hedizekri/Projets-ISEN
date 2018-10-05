@@ -10,7 +10,7 @@ footer
   {
     height: 100px;
     bottom:0;
-    background-color: #000000;
+    background-color: #1B1100;
     height:100px;
     width:100%;
     left:0.5%;
@@ -18,6 +18,7 @@ footer
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-bottom: 0;
+    position : fixed;
   }
 
 footer p
@@ -292,9 +293,9 @@ background:url(images/bouton_noir_2.png) no-repeat;
 
 
 a.top {
-   position:fixed;
-   vertical-align: bottom;
-   
+    position:fixed;
+    vertical-align: bottom;
+    
 }
 
 body {

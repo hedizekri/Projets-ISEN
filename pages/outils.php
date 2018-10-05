@@ -77,6 +77,11 @@ echo '
         <table align="center">
 
         <tr>
+          <td>
+          
+          <a href="#" class="top">Haut de page</a>
+          
+          </td>
 
           <td>
 
@@ -116,7 +121,7 @@ echo '
 
                 <ul>
 
-                  <li><a href="informations_marque.php">Information sur la marque</a></li>
+                  <li><a href="informations_marque.php">Informations sur la marque</a></li>
 
           </tr>
 
