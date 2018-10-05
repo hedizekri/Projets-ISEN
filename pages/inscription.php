@@ -29,7 +29,7 @@
 <body>
 	<?php
 	//connexion à la base de données
-	$connexion = mysqli_connect("localhost","ndc1as6-10","3qpbvlV", "ndc1as6-10");
+	$connexion = mysqli_connect("localhost","root","", "sap2lux");
 
 	//on test la connexion
 	if (!$connexion){
