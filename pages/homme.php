@@ -34,7 +34,7 @@ require('outils.php');
     <?php
         try 
         {
-            $bdd = new PDO('mysql:host=localhost; dbname = sap2lux; charset=utf8', 'root', '');
+            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
         }
         catch(Exception $e)
         {
@@ -86,7 +86,7 @@ require('outils.php');
     
     <p>
     <?php
-        $reponse=$bdd->query('SELECT names FROM products');
+        $reponse=$bdd->query('SELECT name FROM products');
         $nom = $reponse->fetch();
         echo $nom['name'];
     ?>
