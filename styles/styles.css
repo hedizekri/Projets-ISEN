@@ -115,7 +115,7 @@ img .Logo
         background : black; /* couleur de fond */        
         color : white; /* couleur du texte */
         text-decoration : none; /* on supprime le style par defaut des liens */
-        width : 175px; /* largeur */
+        width : 150px; /* largeur */
 }
 
 #menu_deroulant li /* Ã‰lements des listes */
