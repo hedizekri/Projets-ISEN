@@ -88,9 +88,10 @@ require('outils.php');
     <table border="1" cellpadding="10">
         <tr>
             <th>Nom</th>
-            <th>Photo</th>
+            <th>Image</th>
             <th>Description</th>
             <th>Prix</th>
+            <th>Panier</th>
         </tr>
         
     <?php
@@ -99,18 +100,17 @@ require('outils.php');
         ?>
         <tr>
             <th><?php echo $nom['name']; ?></th>
-            <th><?php echo $nom['photo']; ?></th>
+            <th><?php echo $nom['image']; ?></th>
             <th><?php echo $nom['description']; ?></th>
-            <th><?php echo $nom['unit_price']; ?></th>
+            <th><?php echo $nom['unit_price']; ?>,00€</th>
             <th>
                 <form method="Post" action="mon_panier.php">
                     <input type="submit" name="panier" value="Ajouter a mon panier">
                 </form>
             </th>
         </tr>
-        
+        <?php } ?>
     
-    ?>
     </table>
 
 
@@ -143,12 +143,3 @@ require('outils.php');
 
 
 </html> 
-
-
-
-
-
-
-
-
-
