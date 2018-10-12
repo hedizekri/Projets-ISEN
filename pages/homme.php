@@ -22,6 +22,15 @@ require('outils.php');
 
     <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
     <script language="javascript" src="fonction.js"></script>
+
+</head>
+
+
+
+
+
+<body>
+
     <?php
         try 
         {
@@ -32,18 +41,7 @@ require('outils.php');
             die('Erreur :' . $e -> getMessage());
         }
     ?>
-
-
-
-</head>
-
-
-
-
-
-<body>
-
-            
+       
 
     <!-- ******************************************************* -->
 
@@ -88,7 +86,7 @@ require('outils.php');
     
     <p>
     <?php
-        $reponse=$bdd->query('SELECT * FROM products');
+        $reponse=$bdd->query('SELECT names FROM products');
         $nom = $reponse->fetch();
         echo $nom['name'];
     ?>
