@@ -30,6 +30,13 @@ echo
         <table align="center">
 
         <tr>
+        <td>
+
+               <li>
+                <a href="recherche.php">Recherche</a>
+               </li>
+          </td>
+        
 
           <td>
 
@@ -62,6 +69,12 @@ echo
           <td><li><a href="connexion_inscription.php">Connexion / Inscription</a></li> </td>
            
            <td> </td>
+           <td>
+
+               <li>
+                <a href="mon_panier.php">Mon Panier</a>
+               </li>
+          </td>
            
             </tr>
     
@@ -138,7 +151,7 @@ echo '
 
 
 
-      <p>Mise &agrave; jour : 18/05/2018</p>
+      <p>Mise &agrave; jour : 12/10/2018</p>
 
       ' ;
 
