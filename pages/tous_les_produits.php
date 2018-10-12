@@ -25,7 +25,16 @@ require('outils.php') ;
   <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
   <script language="javascript" src="fonction.js"></script>
 
-
+  <?php
+        try 
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
+        }
+        catch(Exception $e)
+        {
+            die('Erreur :' . $e -> getMessage());
+        }
+    ?>
 
 
 
@@ -82,34 +91,34 @@ require('outils.php') ;
     <h1>Tous les produits</h1>
     <hr />
     
-    <?php
-
-    // appel de la fonction de connexion
-    $connexion = mysqli_connect("localhost","root","", "sap2lux");
-
-      //on test la connexion
-      if (!$connexion){
-        die("Connexion impossible : ".mysqli_connect_error($connexion));
-      }
-
-
-      // Modification du jeu de résultats en utf8
-      mysqli_set_charset($connexion, 'utf8');
-
-      // Création de la requête
-      $codeSQL ="SELECT IDvetement,nom,photo,prix,texte from vetements" ;
-
-      // lancement effectif de la requête SQL 
-      $resultat = mysqli_query($connexion,$codeSQL);
-      
-        // si jamais la requête se passait mal      
-        if ( ! $resultat ) 
-          die ("Requete SQL invalide : " . mysqli_error($connexion));
+     <table border="1" cellpadding="10">
+        <tr>
+            <th>Nom</th>
+            <th>Photo</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Panier</th>
+        </tr>
         
-        // on teste le nombre de réponse de la requet
-        $nombreLigne = mysqli_num_rows($resultat) ;
-
-    ?>
+    <?php
+        $reponse=$bdd->query('SELECT * FROM products');
+        while ($nom = $reponse->fetch()){
+        ?>
+        <tr>
+            <th><?php echo $nom['name']; ?></th>
+            <th><?php echo $nom['photo']; ?></th>
+            <th><?php echo $nom['description']; ?></th>
+            <th><?php echo $nom['unit_price']; ?>,00€</th>
+            <th>
+                <form method="Post" action="mon_panier.php">
+                    <input type="submit" name="panier" value="Ajouter a mon panier">
+                </form>
+            </th>
+        </tr>
+        
+    
+    <?php } ?>
+    </table>
     </div> <!-- fin contenu -->
 
 

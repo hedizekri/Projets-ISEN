@@ -91,6 +91,7 @@ require('outils.php');
             <th>Photo</th>
             <th>Description</th>
             <th>Prix</th>
+            <th>Panier</th>
         </tr>
         
     <?php
@@ -101,7 +102,7 @@ require('outils.php');
             <th><?php echo $nom['name']; ?></th>
             <th><?php echo $nom['photo']; ?></th>
             <th><?php echo $nom['description']; ?></th>
-            <th><?php echo $nom['unit_price']; ?></th>
+            <th><?php echo $nom['unit_price']; ?>,00€</th>
             <th>
                 <form method="Post" action="mon_panier.php">
                     <input type="submit" name="panier" value="Ajouter a mon panier">
@@ -110,7 +111,7 @@ require('outils.php');
         </tr>
         
     
-    ?>
+    <?php } ?>
     </table>
 
 
