@@ -83,16 +83,27 @@ require('outils.php');
     <h1>Homme</h1>
     <hr />
     </div> <!-- fin contenu -->
-    
-    <p>
-    <?php
-        $reponse=$bdd->query('SELECT name FROM products');
-        $nom = $reponse->fetch();
-        echo $nom['name'];
-    ?>
-    </p>
-    
 
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Description</th>
+        </tr>
+        
+    <?php
+        $reponse=$bdd->query('SELECT * FROM products');
+        while ($nom = $reponse->fetch()){
+        ?>
+        <tr>
+            <th><?php echo $nom['name']; ?></th>
+            <th><?php echo $nom['unit_price']; ?></th>
+            <th><?php echo $nom['description']; ?></th>
+        </tr>
+        
+    
+    <?php }?>
+    </table>
 
 
          
