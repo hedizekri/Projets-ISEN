@@ -1,3 +1,4 @@
+
 body {
     background-color: #e7e1d6;
     padding-bottom: 10%;
@@ -18,13 +19,14 @@ body {
 
 footer 
   {
-    height: 13%;
     background-color: #1B1100;
+    height:10%;
     width:100%;
+    left:0.5%;
     bottom:0px;
-    left: 0,5%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    margin-bottom: 0;
     position : fixed;
   }
 
@@ -37,11 +39,11 @@ footer p
 footer ul 
   {
     list-style:none;
-    padding-top: 2%;
   }
 
 footer a 
   {
+
     font-family: Palatino Linotype;
     text-decoration: none;
     font-weight: 800;
@@ -53,7 +55,6 @@ footer a
 
 #follow a img 
   {
-    padding-top: 5%;
     align-items: left;
     height: 50px;
     width: 50px;
@@ -71,10 +72,6 @@ img .Logo
       width: 90;
       height: 90;
     }
-
-#hautdepage {
-    height: 20%;
-}
 
 #connexion_inscription table
     {

@@ -1,7 +1,5 @@
 <?php
-
-require('outils.php') ;
-
+require('outils.php');
 ?>
 
 <!DOCTYPE html>     <!-- PAGE : MODELE.HTML -->
@@ -22,15 +20,8 @@ require('outils.php') ;
 
 
 
-  <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
-  <script language="javascript" src="fonction.js"></script>
-
-
-
-
-
-
-
+    <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
+    <script language="javascript" src="fonction.js"></script>
 
 </head>
 
@@ -40,7 +31,17 @@ require('outils.php') ;
 
 <body>
 
-            
+    <?php
+        try 
+        {
+            $bdd = new PDO('mysql:host=localhost; dbname = sap2lux; charset=utf8', 'root', '');
+        }
+        catch(Exception $e)
+        {
+            die('Erreur :' . $e -> getMessage());
+        }
+    ?>
+       
 
     <!-- ******************************************************* -->
 
@@ -82,6 +83,15 @@ require('outils.php') ;
     <h1>Homme</h1>
     <hr />
     </div> <!-- fin contenu -->
+    
+    <p>
+    <?php
+        $reponse=$bdd->query('SELECT names FROM products');
+        $nom = $reponse->fetch();
+        echo $nom['name'];
+    ?>
+    </p>
+    
 
 
 
