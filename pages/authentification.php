@@ -1,5 +1,7 @@
 <?php
-require('outils.php');
+
+require('outils.php') ;
+
 ?>
 
 <!DOCTYPE html>     <!-- PAGE : MODELE.HTML -->
@@ -19,9 +21,15 @@ require('outils.php');
 
 
 
-
     <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
     <script language="javascript" src="fonction.js"></script>
+
+
+
+
+
+
+
 
 </head>
 
@@ -31,17 +39,7 @@ require('outils.php');
 
 <body>
 
-    <?php
-        try 
-        {
-            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
-        }
-        catch(Exception $e)
-        {
-            die('Erreur :' . $e -> getMessage());
-        }
-    ?>
-       
+            
 
     <!-- ******************************************************* -->
 
@@ -57,13 +55,11 @@ require('outils.php');
 
         afficheTitre();
 
-      ?>   
-    
-    </div>
+      ?>
 
     <div id="menu">
     
-      <?php
+           <?php
 
         afficheMenu();
 
@@ -79,39 +75,57 @@ require('outils.php');
 
     <!-- ******************************************************* -->
 
+    
+
     <div id="contenu">
-    <h1>Homme</h1>
-    <hr />
-    </div> <!-- fin contenu -->
+
+    <?php
+
+    // on récupère les champs du formulaire
+
+    $Login=$_POST["identifiant"];
+    $Mdp=$_POST["motdepasse"];
+
+
+    //connexion à la base de données
+    $connexion = mysqli_connect("localhost","root","3qpbvlV", "sap2lux");
+
+    //on test la connexion
+    if (!$connexion){
+      die("Connexion impossible : ".mysqli_connect_error($connexion));
+    }
+    mysqli_set_charset($connexion,"utf-8");
+
+    // extraction des id et mdp
+    $requete="SELECT identifiant,mdp from  client";
+
+    //exécution de la requête
+      $result= mysqli_query($connexion,$requete);
+
+    // on teste si le login et le mdp sont corrects
+
+    while ($row=mysqli_fetch_assoc($result)) {  
+      if ($Login == $row["identifiant"] && $Mdp == $row["mdp"]) {
+        $_SESSION["auth"] = 1 ;
+        $_SESSION["nom"] = "test" ;
+        echo "Connexion réussie !";
+        echo "<br>Bonjour (insérer identifiant)";
+      } else {
+        $_SESSION["auth"] = 0 ;
+        $_SESSION["nom"] = "Inconnu" ;
+        echo "Connexion impossible" ;
+        echo "<br>Identifiant ou mot de passe incorrect";
+      }
+    }
+
+    ?>
+
+  
 
     
-    <table border="1" cellpadding="10">
-        <tr>
-            <th>Nom</th>
-            <th>Photo</th>
-            <th>Description</th>
-            <th>Prix</th>
-        </tr>
-        
-    <?php
-        $reponse=$bdd->query('SELECT * FROM products');
-        while ($nom = $reponse->fetch()){
-        ?>
-        <tr>
-            <th><?php echo $nom['name']; ?></th>
-            <th><?php echo $nom['photo']; ?></th>
-            <th><?php echo $nom['description']; ?></th>
-            <th><?php echo $nom['unit_price']; ?></th>
-            <th>
-                <form method="Post" action="mon_panier.php">
-                    <input type="submit" name="panier" value="Ajouter a mon panier">
-                </form>
-            </th>
-        </tr>
-        
-    
-    ?>
-    </table>
+
+    </div> <!-- fin contenu -->
+
 
 
          
@@ -126,11 +140,9 @@ require('outils.php');
 
     <footer>
 
-      <?php
-
+       <?php
         afficheFooter();
-
-      ?> 
+    ?>  
 
     </footer> <!-- fin du pied de page -->
 
