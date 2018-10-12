@@ -138,7 +138,7 @@ echo '
 
 
 
-      <p>Mise &agrave; jour : 18/05/2018</p>
+      <p>Mise &agrave; jour : 12/10/2018</p>
 
       ' ;
 
