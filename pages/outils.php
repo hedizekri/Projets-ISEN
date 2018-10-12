@@ -1,19 +1,4 @@
 <?php 
-  // fonction de connexion à la base de données
-
-function cnxDB() {
-
-
-$connexion = mysqli_connect("localhost","root","", "sap2lux");
-
-  //on test la connexion
-  if (!$connexion){
-    die("Connexion impossible : ".mysqli_connect_error($connexion));
-  }
-  mysqli_set_charset($connexion,"utf-8");
-
-
-}
 
 function afficheTitre() {
 
@@ -58,10 +43,10 @@ echo
           <td><li>
                 <a href="#">Par Type</a>
                 <ul>
-                        <li><a href="chaussures.php">Costumes</a></li>
-                        <li><a href="costumes.php">Pantalons</a></li>
+                        <li><a href="costumes.php">Costumes</a></li>
+                        <li><a href="pantalons.php">Pantalons</a></li>
                         <li><a href="pulls.php">Pulls</a></li>              
-                        <li><a href="pantalons.php">Chaussures</a></li>
+                        <li><a href="chaussures.php">Chaussures</a></li>
                 </ul>
         </li></td>
            

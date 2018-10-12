@@ -95,7 +95,7 @@ require('outils.php');
         </tr>
         
     <?php
-        $reponse=$bdd->query('SELECT * FROM products');
+        $reponse=$bdd->query('SELECT * FROM products WHERE sexe="H"');
         while ($nom = $reponse->fetch()){
         ?>
         <tr>
