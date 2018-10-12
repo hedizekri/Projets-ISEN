@@ -133,10 +133,7 @@ require('outils.php') ;
 
         <label>Nom</label>
 
-        <input type="text" name="nom" size="30" maxlength="30"
-                id="nom"
-                onfocus="myFocus('nom')"
-                onblur="myBlur('nom')" />
+        <input type="text" name="nom" size="30" maxlength="30"/>
 
         <br/>
         <br/>
