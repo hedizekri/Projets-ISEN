@@ -189,13 +189,13 @@ html>body #menu_deroulant li ul ul
 .image_diapo {
      z-index: 3;
     width : 100%;
-    height : 400px;
+    height : 300px;
 }
 
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 50%;
+  max-width: 30%;
   position: relative;
   margin: auto;
 }
