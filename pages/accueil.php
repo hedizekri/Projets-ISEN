@@ -88,8 +88,7 @@ require('outils.php') ;
 
         </h1>
 
-        <br>
-          
+        <br>    
     <div class="slideshow-container">
 
         <div class="mySlides fade">
@@ -150,18 +149,18 @@ require('outils.php') ;
           dots[slideIndex-1].className += " active";
         }
         </script>
-    
-    
-    </p>
+
+    </div>
+  </div>
 
     <div width=90% boder=1>
-        <H1>
+        <h1>
             <img src="../images/actu.png" class="titre_style" >
-        </H1>
+        </h1>
         
-        <H3>
+        <h3>
             Découvrez nos nouvelles gammes de costumes !
-        </H3>
+        </h3>
         
         <p>Stock renouvelé toutes les semaines.</p>
     </div>
