@@ -83,16 +83,35 @@ require('outils.php');
     <h1>Homme</h1>
     <hr />
     </div> <!-- fin contenu -->
-    
-    <p>
-    <?php
-        $reponse=$bdd->query('SELECT name FROM products');
-        $nom = $reponse->fetch();
-        echo $nom['name'];
-    ?>
-    </p>
-    
 
+    
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Nom</th>
+            <th>Photo</th>
+            <th>Description</th>
+            <th>Prix</th>
+        </tr>
+        
+    <?php
+        $reponse=$bdd->query('SELECT * FROM products');
+        while ($nom = $reponse->fetch()){
+        ?>
+        <tr>
+            <th><?php echo $nom['name']; ?></th>
+            <th><?php echo $nom['photo']; ?></th>
+            <th><?php echo $nom['description']; ?></th>
+            <th><?php echo $nom['unit_price']; ?></th>
+            <th>
+                <form method="Post" action="mon_panier.php">
+                    <input type="submit" name="panier" value="Ajouter a mon panier">
+                </form>
+            </th>
+        </tr>
+        
+    
+    ?>
+    </table>
 
 
          
