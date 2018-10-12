@@ -53,6 +53,13 @@ footer a
     color: #d6c2a0;
   }
 
+footer a #hautdepage
+  {
+    height: 10%;
+    padding-bottom: 20%;
+    
+  }
+
 #follow a img 
   {
     align-items: left;
@@ -330,3 +337,7 @@ a.top {
     padding-top: 4%;
     padding-right: 30%;
     }
+
+.titre_style {
+    width:10%;
+}
