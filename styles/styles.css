@@ -335,3 +335,9 @@ body {
     padding-top: 4%;
     padding-right: 30%;
     }
+
+
+/* Accueil et titres/présentation générale */
+.titre_style {
+    transform: scale();
+}

@@ -84,7 +84,7 @@ require('outils.php') ;
       <br>
 
         <h1> 
-            Les nouveautés
+            <img src="../images/nouveautes.png" class="titre_style" >
 
         </h1>
 
@@ -154,11 +154,21 @@ require('outils.php') ;
     
     </p>
 
-    <div width=90% boder=1><H1>Actualités</H1><H3>Découvrez nos nouvelles gammes de costumes !</H3><p>Stock renouvelé toutes les semaines.</p></div>
+    <div width=90% boder=1>
+        <H1>
+            <img src="../images/actu.png" class="titre_style" >
+        </H1>
+        
+        <H3>
+            Découvrez nos nouvelles gammes de costumes !
+        </H3>
+        
+        <p>Stock renouvelé toutes les semaines.</p>
+    </div>
     <br>
     <p>
         <h1>
-        Promos et bons plans 
+            <img src="../images/bons plans.png" class="titre_style" >
         </h1>
 
     </p>
