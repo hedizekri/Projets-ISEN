@@ -72,6 +72,30 @@ function afficheFooter() {
 
 
 echo '
+
+        <input onclick="topFunction()" id="myBtn" type="image" src="../images/top.png" />
+
+        <script>
+          // quand l utilisateur scroll de 20px, montrer le bouton
+          window.onscroll = function() {scrollFunction()};
+
+          function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  document.getElementById("myBtn").style.display = "block";
+              } else {
+                  document.getElementById("myBtn").style.display = "none";
+              }
+          }
+
+          // When the user clicks on the button, scroll to the top of the document
+          function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+
+              
+          }
+        </script>
+
         <table align="center">
 
         <tr>
@@ -117,26 +141,14 @@ echo '
                   <li><a href="informations_marque.php">Informations sur la marque</a></li>
                 </ul>
               </td>
-              
-              <td>
-               <ul>
-                <li>
-          
-                    <a href="#" class="top"><img src="../images/top.png" id="hautdepage" /></a>
-                </li>
-               </ul>
-          
-              </td>
 
           </tr>
 
       </table>
 
-<body background="../images/briquequalite.jpg">
 
 
-
-      <p>Mise &agrave; jour : 12/10/2018</p>
+      <p>Mise &agrave; jour : 16/10/2018</p>
 
       ' ;
 

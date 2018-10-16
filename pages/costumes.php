@@ -100,7 +100,7 @@ require('outils.php');
         ?>
         <tr>
             <th><?php echo $nom['name']; ?></th>
-            <th><?php echo $nom['photo']; ?></th>
+            <th><?php echo $nom['image']; ?></th>
             <th><?php echo $nom['description']; ?></th>
             <th><?php echo $nom['unit_price']; ?>,00€</th>
             <th>

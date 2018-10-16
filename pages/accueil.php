@@ -178,8 +178,6 @@ require('outils.php') ;
 
     </p>
 
-  
-
     
 
     </div> <!-- fin contenu -->

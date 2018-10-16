@@ -30,11 +30,6 @@ footer
     position : fixed;
   }
 
-footer p
-  {
-    text-align: right;
-    color: white;
-  } 
 
 footer ul 
   {
@@ -51,13 +46,6 @@ footer a
     padding-left:20px;
     padding-right:20px;
     color: #d6c2a0;
-  }
-
-footer a #hautdepage
-  {
-    height: 10%;
-    padding-bottom: 20%;
-    
   }
 
 #follow a img 
@@ -345,4 +333,25 @@ a.top {
     height: 20%;
     padding-left: 0px;
 
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 1%; /* Place the button at the bottom of the page */
+    right: 3%; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    width: 20px;
+    height: 20px;
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
 }

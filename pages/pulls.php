@@ -146,7 +146,11 @@ require('outils.php');
 
     <footer>
 
-      
+      <?php
+
+        afficheFooter();
+
+      ?> 
 
     </footer> <!-- fin du pied de page -->
 

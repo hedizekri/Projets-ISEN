@@ -105,8 +105,3 @@ var Slideshow = (function() {
 	}
 
 
-//fonction accès site
-
-	function GoToCarrera(idChamp){
-		
-	}
