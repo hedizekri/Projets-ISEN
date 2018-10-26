@@ -83,12 +83,12 @@ require('outils.php') ;
 
     // on récupère les champs du formulaire
 
-    $Login=$_POST["identifiant"];
-    $Mdp=$_POST["motdepasse"];
+    $identifiant=$_POST["identifiant"];
+    $motdepasse=$_POST["motdepasse"];
 
 
     //connexion à la base de données
-    $connexion = mysqli_connect("localhost","root","3qpbvlV", "sap2lux");
+    $connexion = mysqli_connect("localhost","root","", "sap2lux");
 
     //on test la connexion
     if (!$connexion){
@@ -97,7 +97,7 @@ require('outils.php') ;
     mysqli_set_charset($connexion,"utf-8");
 
     // extraction des id et mdp
-    $requete="SELECT identifiant,mdp from  client";
+    $requete="SELECT identifiant,motdepasse from  users";
 
     //exécution de la requête
       $result= mysqli_query($connexion,$requete);
@@ -105,7 +105,7 @@ require('outils.php') ;
     // on teste si le login et le mdp sont corrects
 
     while ($row=mysqli_fetch_assoc($result)) {  
-      if ($Login == $row["identifiant"] && $Mdp == $row["mdp"]) {
+      if ($identifiant == $row["identifiant"] && $motdepasse == $row["motdepasse"]) {
         $_SESSION["auth"] = 1 ;
         $_SESSION["nom"] = "test" ;
         echo "Connexion réussie !";

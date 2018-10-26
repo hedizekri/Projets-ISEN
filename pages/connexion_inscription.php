@@ -173,11 +173,6 @@ require('outils.php') ;
         <br/>
         <br/>
 
-        <input type="checkbox" name="newsletter" value="1"/> Je souhaite recevoir les promotions Sap2lux par mail
-
-        <br/>
-        <br/>
-
         <input type="submit" name="valider" value="Valider"/>
         
         <br/>
