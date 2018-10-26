@@ -86,20 +86,6 @@ require('outils.php');
 
     
     <table border="1" cellpadding="10">
-
-      
-      <?php
-
-      $reponse=$bdd->query('SELECT * FROM products WHERE type="pull"');
-        while ($nom = $reponse->fetch()){
-
-      // on teste le nombre de réponse de la requete
-      $nombreLigne = mysqli_num_rows($response) ;
-      
-      
-      if ( $nombreLigne > 0 ) 
-        {
-          ?>
         <tr>
             <th>Nom</th>
             <th>Photo</th>
@@ -108,6 +94,10 @@ require('outils.php');
             <th>Panier</th>
         </tr>
         
+    <?php
+        $reponse=$bdd->query('SELECT * FROM products WHERE type="pull"');
+        while ($nom = $reponse->fetch()){
+        ?>
         <tr>
             <th><?php echo $nom['name']; ?></th>
             <th><?php echo $nom['photo']; ?></th>
@@ -119,19 +109,10 @@ require('outils.php');
                 </form>
             </th>
         </tr>
-
         
+    
+    <?php } ?>
     </table>
-
-    <?php }
-        else
-        {
-          echo "<h2>Pas d'annonces dans cette cat&eacute;gorie !</h2>"; 
-        } 
-
-      }
-        
-        ?>
 
 
          
@@ -162,4 +143,13 @@ require('outils.php');
 
 
 
-</html>
+</html> 
+
+
+
+
+
+
+
+
+
