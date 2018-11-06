@@ -22,7 +22,7 @@ echo
                </li>
           </td>
         
-
+          <form method="Get" action="produit.php">
           <td>
 
                <li>
@@ -43,12 +43,13 @@ echo
           <td><li>
                 <a href="#">Par Type</a>
                 <ul>
-                        <li><a href="costumes.php">Costumes</a></li>
+                        <li><a href="produit.php"><input type="button" name="produit" "value="costume"/>Costumes</a></li>
                         <li><a href="pantalons.php">Pantalons</a></li>
                         <li><a href="pulls.php">Pulls</a></li>              
                         <li><a href="chaussures.php">Chaussures</a></li>
                 </ul>
         </li></td>
+        </form>
            
 
           <td><li><a href="connexion_inscription.php">Connexion / Inscription</a></li> </td>

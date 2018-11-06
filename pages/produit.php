@@ -2,9 +2,23 @@
 require('outils.php');
 ?>
 
+
 <!DOCTYPE html>     <!-- PAGE : MODELE.HTML -->
 
+<?php
 
+
+
+    if (isset($_GET["produit"]))
+    {
+
+        $H=$_GET["H"];
+        $F=$_GET["F"];
+        $costume=$_GET["costume"];
+
+    }
+   
+?>
 
 <html>
 
@@ -80,7 +94,7 @@ require('outils.php');
     <!-- ******************************************************* -->
 
     <div id="contenu">
-    <h1>Homme</h1>
+    <h1>Costume</h1>
     <hr />
     </div> <!-- fin contenu -->
 
@@ -94,8 +108,12 @@ require('outils.php');
             <th>Panier</th>
         </tr>
         
+
+
+
+
     <?php
-        $reponse=$bdd->query('SELECT * FROM products WHERE sexe="H"');
+        $reponse=$bdd->query('SELECT * FROM products WHERE type='echo $costume["costume"];' ');
         while ($nom = $reponse->fetch()){
         ?>
         <tr>

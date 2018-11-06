@@ -14,8 +14,7 @@
 		$email=$_POST["email"];
 		$id=$_POST["identifiant"];
 		$motdepasse=$_POST["motdepasse"];
-		$mdp=sha1($motdepasse);
-		$newsletter=$_POST["newsletter"];
+		$motdepasse=sha1($motdepasse);
 	}
 	else {
 		die("Répondez au questionnaire");
@@ -38,7 +37,7 @@
 	mysqli_set_charset($connexion,"utf-8");
 
 	//requete SQL
-	$codeSQL = "insert into client(sexe, prenom, nom, date, mail, identifiant, mdp, promo)"."Values('".$prenom."','".$nom."','".$date."','".$email."','".$id."','".$mdp."',".$newsletter.")";
+	$codeSQL = "insert into users(sexe, prenom, nom, date, email, identifiant, motdepasse)"."Values('".$sexe."','".$prenom."','".$nom."','".$date."','".$email."','".$id."','".$motdepasse."')";
 
 	$resultat = mysqli_query($connexion,$codeSQL); //on lande la requête SQL
 
