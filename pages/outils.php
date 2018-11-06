@@ -43,7 +43,7 @@ echo
           <td><li>
                 <a href="#">Par Type</a>
                 <ul>
-                        <li><a href="produit.php"><input type="button" name="produit" "value="costume"/>Costumes</a></li>
+                        <li><a href="Costumes.php">Costumes</a></li>
                         <li><a href="pantalons.php">Pantalons</a></li>
                         <li><a href="pulls.php">Pulls</a></li>              
                         <li><a href="chaussures.php">Chaussures</a></li>
@@ -52,7 +52,13 @@ echo
         </form>
            
 
-          <td><li><a href="connexion_inscription.php">Connexion / Inscription</a></li> </td>
+          <td><li>
+                <a href="#">Connexion / Inscritpion</a>
+                <ul>
+                        <li><a href="connexion.php">Connexion</a></li>
+                        <li><a href="inscription.php">Inscription</a></li>
+                </ul>
+        </li></td>
            
            <td> </td>
            <td>
