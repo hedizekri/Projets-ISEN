@@ -1,6 +1,7 @@
 <?php
 
-require ('outils.php');
+session_start();
+require('outils.php') ;
 
 ?>
 
