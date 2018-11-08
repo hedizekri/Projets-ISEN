@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require('outils.php') ;
 
 ?>
@@ -77,6 +78,15 @@ require('outils.php') ;
     <!--                 CONTENU                                 -->
 
     <!-- ******************************************************* -->
+
+<?php 
+                    if ( !isset($_SESSION["auth"]) || $_SESSION["auth"] == 0 )
+    {
+        // redirection
+        header("location:connexion_inscription.php");
+    } 
+?>
+
 
     <div id="contenu">
     <h1>Mon Panier</h1>
