@@ -128,60 +128,6 @@ if(isset($_POST['identifiant'],$_POST['mdp'])){//l'utilisateur à cliqué sur "S
 if($AfficherFormulaire==1){
     ?>
 
-    <form method="post" action="inscription.php">
-
-
-        <h2> Inscription </h2>
-
-        <label>Nom</label>
-
-        <input type="text" name="nom" size="30" maxlength="30"/>
-
-        <br/>
-        <br/>
-
-        <label>Prénom</label>
-
-        <input type="text" name="prenom" size="30" maxlength="30"/>
-
-        <br/>
-        <br/>
-
-        <label>Date de Naissance</label>
-
-        <input type="text" name="date" size="10" maxlength="10" placeholder="jj/mm/aaaa"/>
-
-        <br/>
-        <br/>
-
-        <label>Adresse Mail</label>
-
-        <input type="text" name="mail"/>
-
-        <br/>
-        <br/>
-
-        <label>Identifiant</label>
-
-        <input type="text" name="identifiant" />
-
-        <br/>
-        <br/>
-
-        <label>Mot de passe</label>
-
-        <input type="password" name="mdp" />
-
-        <br/>
-        <br/>
-
-        <input type="submit" value="Valider"/>
-        
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-
     <?php
 }
 ?>

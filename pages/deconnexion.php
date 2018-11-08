@@ -22,9 +22,8 @@ require('outils.php') ;
 
 
 
-
-  <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
-  <script language="javascript" src="fonction.js"></script>
+    <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
+    <script language="javascript" src="fonction.js"></script>
 
 
 
@@ -57,13 +56,11 @@ require('outils.php') ;
 
         afficheTitre();
 
-      ?>   
-    
-    </div>
+      ?>
 
     <div id="menu">
     
-      <?php
+           <?php
 
         afficheMenu();
 
@@ -79,22 +76,23 @@ require('outils.php') ;
 
     <!-- ******************************************************* -->
 
-<?php 
-                    if ( !isset($_SESSION["auth"]) || $_SESSION["auth"] == 0 )
-    {
-        // redirection
-        header("location:connexion_inscription.php");
-    } 
+<div>
+    
+    <?php
+ 
+/*  Suppression de toutes les variables de session */
+ 
+    session_unset();
+ 
+/*  Destruction de la session */
+ 
+    session_destroy();
+ 
 ?>
 
+<p>Deconnecté.</p>
 
-    <div id="contenu">
-    <h1>Mon Panier</h1>
-    <hr />
-    
-
-    </div>
-
+</div>
 
 
          
@@ -109,11 +107,9 @@ require('outils.php') ;
 
     <footer>
 
-      <?php
-
+       <?php
         afficheFooter();
-
-      ?> 
+    ?>  
 
     </footer> <!-- fin du pied de page -->
 

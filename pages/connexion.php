@@ -80,7 +80,6 @@ require('outils.php') ;
 /*
 Page: connexion.php
 */
-session_start(); // à mettre tout en haut du fichier .php, cette fonction propre à PHP servira à maintenir la $_SESSION
 if(isset($_POST['connexion'])) { // si le bouton "Connexion" est appuyé
     // on vérifie que le champ "identifiant" n'est pas vide
     // empty vérifie à la fois si le champ est vide et si le champ existe belle et bien (is set)
@@ -106,61 +105,18 @@ if(isset($_POST['connexion'])) { // si le bouton "Connexion" est appuyé
                 // si mysqli_num_rows() retourne 0 c'est qu'il a trouvé aucun résultat
 
                 if(mysqli_num_rows($Requete) == 0) {
-                    echo "Le identifiant ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
+                    echo "Connexion impossible. Identifiant ou mot de passe incorrect.";
                 } else {
                     // on ouvre la session avec $_SESSION:
-                    $_SESSION['identifiant'] = $identifiant; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le identifiant
-                    echo "Vous êtes à présent connecté !";
+                    $_SESSION['identifiant'] = $identifiant;
+                    $_SESSION['auth'] = 1; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le identifiant
+                    echo "Bonjour ". $_SESSION["identifiant"] ."";
                 }
             }
         }
     }
 }
 ?>
-
-<div id='connexion_inscription'>  
-
-      <!-- 
-Les balises <form> sert à dire que c'est un formulaire
-on lui demande de faire fonctionner la page connexion.php une fois le bouton "Connexion" cliqué
-on lui dit également que c'est un formulaire de type "POST"
- 
-Les balises <input> sont les champs de formulaire
-type="text" sera du texte
-type="password" sera des petits points noir (texte caché)
-type="submit" sera un bouton pour valider le formulaire
-name="nom de l'input" sert à le reconnaitre une fois le bouton submit cliqué, pour le code PHP
- -->
-
-      <form method="Post" action="connexion.php">
-
-  
-        <h2> Connexion </h2>
-        <label>Identifiant</label>
-
-        <input type="text" name="identifiant" value="" />
-
-        <br/>
-        <br/>
-
-        <label>Mot de passe</label>
-
-        <input type="password" name="mdp" value="" />
-
-        <br/>
-        <br/>
-
-        <input type="submit" name="connexion" value="Connexion" />
-
-        <br/>
-
-        <br/>
-
-
-
-      </form> <!-- fin contenu -->
-
-</div>
 
          
 

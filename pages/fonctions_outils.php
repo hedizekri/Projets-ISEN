@@ -52,11 +52,7 @@ echo
       <td><li>
                <a href="mon_panier.php"> Mon panier </a>
           </li
-      </td>  
-            </tr>
-    
-          </table>
-          </div>';
+      </td>';
         }
 
            
@@ -70,30 +66,34 @@ echo
           if ( $_SESSION["identifiant"] == 0 )  // si la session vaut 0
             {
               // affichage du bouton de connexion
-              echo '<li>
+              echo '<td><li>
                 <a href="#">Connexion / Inscritpion</a>
                 <ul>
                         <li><a href="connexion.php">Connexion</a></li>
                         <li><a href="inscription.php">Inscription</a></li>
                 </ul>
-        </li>';
+        </li></td>';
             }
           else  // si la session vaut 1
             {
               // affichage du bouton de déconnexion
-              echo '<li><a href="deconnexion.php">D&eacute;connexion</a></li>';
+              echo '<td><li><a href="deconnexion.php">D&eacute;connexion</a></li></td>';
             }
         }
       else // si la session n'existe pas
         {
           // affichage du bouton de connexion
-          echo '<li>
+          echo '<td><li>
                 <a href="#">Connexion / Inscritpion</a>
                 <ul>
                         <li><a href="connexion.php">Connexion</a></li>
                         <li><a href="inscription.php">Inscription</a></li>
                 </ul>
-        </li>';    
+        </li></td>
+        </tr>
+    
+          </table>
+          </div>';    
         } 
 }
 }
