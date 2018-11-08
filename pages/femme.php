@@ -1,5 +1,8 @@
 <?php
-require('outils.php');
+
+session_start();
+require('outils.php') ;
+
 ?>
 
 <!DOCTYPE html>     <!-- PAGE : MODELE.HTML -->

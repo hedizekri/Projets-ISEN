@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require('outils.php') ;
 
 ?>
@@ -82,6 +83,7 @@ require('outils.php') ;
     
       <br>
       <br>
+
 
         <h1> 
             <img src="../images/nouveautes.png" class="titre_style" >

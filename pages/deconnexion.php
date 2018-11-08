@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require('outils.php') ;
 
 ?>
@@ -75,57 +76,23 @@ require('outils.php') ;
 
     <!-- ******************************************************* -->
 
+<div>
     
-
-    <div id="contenu">
-
     <?php
+ 
+/*  Suppression de toutes les variables de session */
+ 
+    session_unset();
+ 
+/*  Destruction de la session */
+ 
+    session_destroy();
+ 
+?>
 
-    // on récupère les champs du formulaire
+<p>Deconnecté.</p>
 
-    $identifiant=$_POST["identifiant"];
-    $motdepasse=$_POST["motdepasse"];
-
-
-    //connexion à la base de données
-    $connexion = mysqli_connect("localhost","root","", "sap2lux");
-
-    //on test la connexion
-    if (!$connexion){
-      die("Connexion impossible : ".mysqli_connect_error($connexion));
-    }
-    mysqli_set_charset($connexion,"utf-8");
-
-    // extraction des id et mdp
-    $requete="SELECT identifiant,motdepasse from  users";
-
-    //exécution de la requête
-      $result= mysqli_query($connexion,$requete);
-
-    // on teste si le login et le mdp sont corrects
-
-    while ($row=mysqli_fetch_assoc($result)) {  
-      if ($identifiant == $row["identifiant"] && $motdepasse == $row["motdepasse"]) {
-        $_SESSION["auth"] = 1 ;
-        $_SESSION["nom"] = "test" ;
-        echo "Connexion réussie !";
-        echo "<br>Bonjour (insérer identifiant)";
-      } else {
-        $_SESSION["auth"] = 0 ;
-        $_SESSION["nom"] = "Inconnu" ;
-        echo "Connexion impossible" ;
-        echo "<br>Identifiant ou mot de passe incorrect";
-      }
-    }
-
-    ?>
-
-  
-
-    
-
-    </div> <!-- fin contenu -->
-
+</div>
 
 
          
@@ -155,12 +122,3 @@ require('outils.php') ;
 
 
 </html> 
-
-
-
-
-
-
-
-
-
