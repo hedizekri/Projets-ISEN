@@ -83,8 +83,6 @@ require('outils.php') ;
     <!-- ******************************************************* -->
 
     <div id="contenu">
-    <h1>Costume</h1>
-    <hr />
     </div> <!-- fin contenu -->
 
     
@@ -96,6 +94,22 @@ require('outils.php') ;
             $reponse=$bdd->query('SELECT * FROM products WHERE type = "'.$produit.'"');
 
             ?>
+
+
+            <h1><?php 
+            if($produit=="costume") {
+                echo "Costumes";
+            }
+            if($produit=="pantalon") {
+                echo "Pantalons";
+            }
+            if($produit=="pull") {
+                echo "Pulls";
+            }
+            if($produit=="chaussures") {
+                echo "Chaussures";
+            }
+            ?></h1>
 
             <table border="1" cellpadding="10">
             <tr>
@@ -137,6 +151,15 @@ require('outils.php') ;
 
             ?>
 
+            <h1><?php 
+            if($sexe=="H") {
+                echo "Vêtements Homme";
+            }
+            if($sexe=="F") {
+                echo "Vêtements Femme";
+            }
+            ?></h1>
+
             <table border="1" cellpadding="10">
             <tr>
                 <th>Nom</th>
@@ -176,6 +199,12 @@ require('outils.php') ;
             $reponse=$bdd->query('SELECT * FROM products');
 
             ?>
+
+            <h1><?php 
+            if($all=="all") {
+                echo "Tous les produits";
+            }
+            ?></h1>
 
             <table border="1" cellpadding="10">
             <tr>
