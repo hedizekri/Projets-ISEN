@@ -1,9 +1,9 @@
 <?php
 
+session_start();
 require('outils.php') ;
 
 ?>
-
 
 <!DOCTYPE html>     <!-- PAGE : MODELE.HTML -->
 
@@ -16,14 +16,15 @@ require('outils.php') ;
 <head>
 
   <title>Sap2lux</title>
-  <script type="text/javascript" src="fonctions.js" language="javascript"></script>
+
   <meta charset="utf-8" />
 
 
 
 
+    <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
+    <script language="javascript" src="fonction.js"></script>
 
-  <link href="../styles/styles.css"  rel="stylesheet" type="text/css" />
 
 
 
@@ -50,25 +51,21 @@ require('outils.php') ;
     
 
     <div id="titre">
-
+    
       <?php
 
         afficheTitre();
 
       ?>
 
-    </div>
-
-
-
     <div id="menu">
-
-      <?php
+    
+           <?php
 
         afficheMenu();
 
-      ?>
-
+      ?>   
+    
     </div> <!-- fin menu -->
 
     
@@ -79,32 +76,36 @@ require('outils.php') ;
 
     <!-- ******************************************************* -->
 
-    
+<div id='connexion_inscription'>  
 
-    <div id="connexion_inscription">
+<br/>
+<br/>
+<br/>
 
-<table align="center">
+<table>
+
     <tr>
-    <td>
-      <form method="Post" action="authentification.php">
+        <td>
+
+        <form method="Post" action="connexion.php">
 
   
         <h2> Connexion </h2>
         <label>Identifiant</label>
 
-        <input type="text" name="identifiant" size="30" maxlength="30"/>
+        <input type="text" name="identifiant" value="" />
 
         <br/>
         <br/>
 
         <label>Mot de passe</label>
 
-        <input type="password" name="motdepasse" size="15" maxlength="15"/>
+        <input type="password" name="mdp" value="" />
 
         <br/>
         <br/>
 
-        <input type="submit" name="valider" value="Valider">
+        <input type="submit" name="connexion" value="Connexion" />
 
         <br/>
 
@@ -113,23 +114,15 @@ require('outils.php') ;
 
 
       </form>
- </td>
- <td>
-     
- </td>
- <td>
-      <form method="Post" action="inscription.php">
+
+  </td>
+
+  <td>
+        
+        <form method="post" action="inscription.php">
 
 
         <h2> Inscription </h2>
-        <label>Civilité</label>
-
-        <input type="radio" name="sexe" value="M" />Monsieur
-
-        <input type="radio" name="sexe" value="F" />Madame
-
-        <br/>
-        <br/>
 
         <label>Nom</label>
 
@@ -154,47 +147,42 @@ require('outils.php') ;
 
         <label>Adresse Mail</label>
 
-        <input type="text" name="email" size="30" maxlength="30"/>
+        <input type="text" name="mail"/>
 
         <br/>
         <br/>
 
         <label>Identifiant</label>
 
-        <input type="text" name="identifiant" size="30" maxlength="30"/>
+        <input type="text" name="identifiant" />
 
         <br/>
         <br/>
 
         <label>Mot de passe</label>
 
-        <input type="password" name="motdepasse" size="15" maxlength="15"/>
+        <input type="password" name="mdp" />
 
         <br/>
         <br/>
 
-        <input type="checkbox" name="newsletter" value="1"/> Je souhaite recevoir les promotions Sap2lux par mail
-
-        <br/>
-        <br/>
-
-        <input type="submit" name="valider" value="Valider"/>
+        <input type="submit" value="Valider"/>
         
         <br/>
         <br/>
         <br/>
         <br/>
 
+    </form>
+
+</td>
 
 
-      </form>
-    </td>  
-    </tr>
-    </table>
+</tr>
 
-    </div> <!-- fin contenu -->
+</table>
 
-
+</div>
 
          
 
@@ -208,11 +196,9 @@ require('outils.php') ;
 
     <footer>
 
-      <?php
-
+       <?php
         afficheFooter();
-
-      ?>
+    ?>  
 
     </footer> <!-- fin du pied de page -->
 
@@ -225,12 +211,4 @@ require('outils.php') ;
 
 
 </html> 
-
-
-
-
-
-
-
-
 

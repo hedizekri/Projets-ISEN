@@ -21,7 +21,7 @@ echo
                 <a href="recherche.php">Recherche</a>
                </li>
           </td>
-        
+
 
           <td>
 
@@ -43,29 +43,68 @@ echo
           <td><li>
                 <a href="#">Par Type</a>
                 <ul>
-                        <li><a href="costumes.php">Costumes</a></li>
+                        <li><a href="Costumes.php">Costumes</a></li>
                         <li><a href="pantalons.php">Pantalons</a></li>
                         <li><a href="pulls.php">Pulls</a></li>              
                         <li><a href="chaussures.php">Chaussures</a></li>
                 </ul>
-        </li></td>
+        </li></td>';
+        
+        if ( isset($_SESSION["auth"]) ) // si la session existe
+        {
+          if ( $_SESSION["auth"] == 1 )  // si la session vaut 1
+          {
+            //affichage du bouton mon panier
+           echo'
+            <td>
+              <li>
+                <a href="mon_panier.php"> Mon panier </a>
+              </li>
+            </td>';
+          }
+        }
+
            
 
-          <td><li><a href="connexion_inscription.php">Connexion / Inscription</a></li> </td>
-           
-           <td> </td>
-           <td>
+          
+          
+        // test de session
+      
+      if ( isset($_SESSION["auth"]) ) // si la session existe
+        {
+          if ( $_SESSION["auth"] == 1 )  // si la session vaut 1
+            {
+              // affichage du bouton de connexion
+              echo '<td><li><a href="deconnexion.php">D&eacute;connexion</a></li></td>';
+            }
 
-               <li>
-                <a href="mon_panier.php">Mon Panier</a>
-               </li>
-          </td>
-           
-            </tr>
+          else  // si la session ne vaut pas 1
+            {
+              // affichage du bouton de déconnexion
+              echo '
+              <td>
+                <li>
+                  <a href="connexion_inscription.php">Connexion / Inscritpion</a>
+                  
+                </li>
+              </td>';
+            }
+        }
+      else // si la session n'existe pas
+        {
+          // affichage du bouton de connexion
+          echo '<td><li>
+                <a href="connexion_inscription.php">Connexion / Inscritpion</a>
+                
+        </li></td>';
+
+        }
+
+        echo '
+        </tr>
     
           </table>
-          </div>';
-
+          </div>';     
 }
 
 function afficheFooter() {

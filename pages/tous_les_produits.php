@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require('outils.php') ;
 
 ?>
@@ -106,7 +107,7 @@ require('outils.php') ;
         ?>
         <tr>
             <th><?php echo $nom['name']; ?></th>
-            <th><?php echo $nom['photo']; ?></th>
+            <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
             <th><?php echo $nom['description']; ?></th>
             <th><?php echo $nom['unit_price']; ?>,00€</th>
             <th>
