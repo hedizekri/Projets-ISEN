@@ -15,12 +15,6 @@ echo
         <table align="center">
 
         <tr>
-        <td>
-
-               <li>
-                <a href="recherche.php">Recherche</a>
-               </li>
-          </td>
 
 
           <td>
