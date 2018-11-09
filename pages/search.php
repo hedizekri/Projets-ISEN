@@ -94,7 +94,15 @@ require('outils.php') ;
     </div> <!-- fin contenu -->
     
     
-    <table border="1" cellpadding="10">
+    
+        
+    <?php
+        if(($recherche1 == "")||($recherche1 == "%")) {
+        echo "Veuillez entrer un mot clé s'il vous plaît!";
+        }
+        else{
+        ?>
+        <table border="1" cellpadding="10">
         <tr>
             <th>Nom</th>
             <th>Photo</th>
@@ -102,17 +110,13 @@ require('outils.php') ;
             <th>Prix</th>
             <th>Panier</th>
         </tr>
-        
-    <?php
-        if(($recherche1 == "")||($recherche1 == "%")) {
-        echo "Veuillez entrer un mot clé s'il vous plaît!";
-        }
-        
-        $reponse=$bdd->prepare('SELECT * FROM products WHERE name LIKE '%$recherche1%'');
-        $reponse->execute(array('recherche1'=>$recherche1));
+        <?php
+        $reponse=$bdd->query("SELECT * FROM products WHERE name LIKE \"%$recherche1%\"");
         while ($nom = $reponse->fetch()){
         ?>
+
         <tr>
+            
             <th><?php echo $nom['name']; ?></th>
             <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
             <th><?php echo $nom['description']; ?></th>
@@ -125,7 +129,7 @@ require('outils.php') ;
         </tr>
         
     
-    <?php } ?>
+    <?php }}?>
     </table>
     
 
