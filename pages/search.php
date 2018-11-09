@@ -26,19 +26,31 @@ require('outils.php') ;
     <script language="javascript" src="fonction.js"></script>
 
 
-
-
-
-
-
-
 </head>
 
 
-
-
-
 <body>
+    <?php
+	    if(isset($_POST['recherche1'])){ // si formulaire soumis
+            $recherche1 = $_POST['recherche1'];
+            echo $recherche1;
+            }
+    ?>
+    
+    <?php
+        try 
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
+        }
+        catch(Exception $e)
+        {
+            die('Erreur :' . $e -> getMessage());
+        }
+    ?>
+
+
+
+
 
             
 
@@ -76,10 +88,45 @@ require('outils.php') ;
 
     <!-- ******************************************************* -->
 
-    
-
     <div id="contenu">
-
+    <h1>Recherche</h1>
+    <hr />
+    </div> <!-- fin contenu -->
+    
+    
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Nom</th>
+            <th>Photo</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Panier</th>
+        </tr>
+        
+    <?php
+        if(($recherche1 == "")||($recherche1 == "%")) {
+        echo "Veuillez entrer un mot clé s'il vous plaît!";
+        }
+        
+        $reponse=$bdd->prepare('SELECT * FROM products WHERE name LIKE '%$recherche1%'');
+        $reponse->execute(array('recherche1'=>$recherche1));
+        while ($nom = $reponse->fetch()){
+        ?>
+        <tr>
+            <th><?php echo $nom['name']; ?></th>
+            <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
+            <th><?php echo $nom['description']; ?></th>
+            <th><?php echo $nom['unit_price']; ?>,00€</th>
+            <th>
+                <form method="Post" action="mon_panier.php">
+                    <input type="submit" name="panier" value="Ajouter a mon panier">
+                </form>
+            </th>
+        </tr>
+        
+    
+    <?php } ?>
+    </table>
     
 
 
