@@ -181,9 +181,7 @@ require('outils.php') ;
                 <th><?php echo $nom['description']; ?></th>
                 <th><?php echo $nom['unit_price']; ?>,00€</th>
                 <th>
-                    <form method="Post" action="mon_panier.php">
-                        <input type="submit" name="panier" value="Ajouter a mon panier">
-                    </form>
+                    <a href="mon_panier.php?panier= <?php $nom['name'] ?> ">Costumes</a>
                 </th>
             </tr>
             
