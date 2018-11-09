@@ -33,7 +33,6 @@ require('outils.php') ;
     <?php
 	    if(isset($_POST['recherche1'])){ // si formulaire soumis
             $recherche1 = $_POST['recherche1'];
-            echo $recherche1;
             }
     ?>
     
