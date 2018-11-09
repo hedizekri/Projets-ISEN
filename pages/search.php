@@ -33,7 +33,6 @@ require('outils.php') ;
     <?php
 	    if(isset($_POST['recherche1'])){ // si formulaire soumis
             $recherche1 = $_POST['recherche1'];
-            echo $recherche1;
             }
     ?>
     
@@ -97,39 +96,43 @@ require('outils.php') ;
     
         
     <?php
-        if(($recherche1 == "")||($recherche1 == "%")) {
-        echo "Veuillez entrer un mot clé s'il vous plaît!";
-        }
-        else{
-        ?>
-        <table border="1" cellpadding="10">
-        <tr>
-            <th>Nom</th>
-            <th>Photo</th>
-            <th>Description</th>
-            <th>Prix</th>
-            <th>Panier</th>
-        </tr>
-        <?php
-        $reponse=$bdd->query("SELECT * FROM products WHERE name LIKE \"%$recherche1%\"");
-        while ($nom = $reponse->fetch()){
-        ?>
+        $reponse=$bdd->query("SELECT * FROM products WHERE name LIKE \"%$recherche1%\"" or die(mysql_error()));
+        if(($recherche1 == "")||($recherche1 == "%")) 
+            {
+            echo "Veuillez entrer un mot clé s'il vous plaît!";
+            }
+        else if ($reponse === False)
+            {
+            echo("Pas d'article");
+            }
+        else
+            {
+                ?>
+                <table border="1" cellpadding="10">
+                <tr>
+                <th>Nom</th>
+                <th>Photo</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Panier</th>
+                </tr> 
+                <?php
 
-        <tr>
-            
-            <th><?php echo $nom['name']; ?></th>
-            <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
-            <th><?php echo $nom['description']; ?></th>
-            <th><?php echo $nom['unit_price']; ?>,00€</th>
-            <th>
+                while ($nom = $reponse->fetch()){
+                ?>
+                <tr>
+                <th><?php echo $nom['name']; ?></th>
+                <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
+                <th><?php echo $nom['description']; ?></th>
+                <th><?php echo $nom['unit_price']; ?>,00€</th>
+                <th>
+                    
                 <form method="Post" action="mon_panier.php">
-                    <input type="submit" name="panier" value="Ajouter a mon panier">
+                <input type="submit" name="panier" value="Ajouter a mon panier">
                 </form>
-            </th>
-        </tr>
-        
-    
-    <?php }}?>
+                </th>
+                </tr>
+            <?php }}?>
     </table>
     
 
