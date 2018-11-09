@@ -79,18 +79,21 @@ require('outils.php') ;
 
     <!-- ******************************************************* -->
 
+<?php 
+                    if ( !isset($_SESSION["auth"]) || $_SESSION["auth"] == 0 )
+    {
+        // redirection
+        header("location:connexion_inscription.php");
+    } 
+?>
+
+
     <div id="contenu">
-    <h1>Recherche</h1>
-
+    <h1>Mon Compte</h1>
     <hr />
-
-    <form method="Post" action="search.php">
-    <label>Cherche ta sap</label>
-    <input type="text" name="search" size="30">
-    <input type="submit" name="Valider" value="Valider">
     
 
-    </div> <!-- fin contenu -->
+    </div>
 
 
 
@@ -123,12 +126,3 @@ require('outils.php') ;
 
 
 </html> 
-
-
-
-
-
-
-
-
-
