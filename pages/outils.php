@@ -64,6 +64,22 @@ echo
           }
         }
 
+
+
+        if ( isset($_SESSION["auth"]) ) // si la session existe
+        {
+          if ( $_SESSION["auth"] == 1 )  // si la session vaut 1
+          {
+            //affichage du bouton mon panier
+           echo'
+            <td>
+              <li>
+                <a href="mon_compte.php"> Mon compte </a>
+              </li>
+            </td>';
+          }
+        }
+
            
 
           
