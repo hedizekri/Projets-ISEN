@@ -15,12 +15,6 @@ echo
         <table align="center">
 
         <tr>
-        <td>
-
-               <li>
-                <a href="recherche.php">Recherche</a>
-               </li>
-          </td>
 
 
           <td>
@@ -59,6 +53,22 @@ echo
             <td>
               <li>
                 <a href="mon_panier.php"> Mon panier </a>
+              </li>
+            </td>';
+          }
+        }
+
+
+
+        if ( isset($_SESSION["auth"]) ) // si la session existe
+        {
+          if ( $_SESSION["auth"] == 1 )  // si la session vaut 1
+          {
+            //affichage du bouton mon panier
+           echo'
+            <td>
+              <li>
+                <a href="mon_compte.php"> Mon compte </a>
               </li>
             </td>';
           }
@@ -104,7 +114,19 @@ echo
         </tr>
     
           </table>
-          </div>';     
+          </div>
+
+          <div id="contenu">
+
+          <br/>
+
+            <form method="Post" action="search.php">
+            <label>Cherche ta sap</label>
+            <input type="text" name="search" size="30">
+            <input type="submit" name="Valider" value="Valider">
+          
+
+          </div> ';     
 }
 
 function afficheFooter() {
