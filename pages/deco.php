@@ -76,21 +76,10 @@ require('outils.php') ;
 
     <!-- ******************************************************* -->
 
-<div>
-    
-    <?php
- 
-/*  Suppression de toutes les variables de session */
- 
-    session_unset();
- 
-/*  Destruction de la session */
- 
-    session_destroy();
+<div>   
 
-    ?>
-    <meta http-equiv="refresh" content="1; URL=deco.php" />    
 
+<p>Deconnecté.</p>
 
 </div>
 
