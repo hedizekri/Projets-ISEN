@@ -120,7 +120,19 @@ echo
         </tr>
     
           </table>
-          </div>';     
+          </div>
+
+          <div id="contenu">
+
+          <br/>
+
+            <form method="Post" action="search.php">
+            <label>Cherche ta sap</label>
+            <input type="text" name="search" size="30">
+            <input type="submit" name="Valider" value="Valider">
+          
+
+          </div> ';     
 }
 
 function afficheFooter() {
