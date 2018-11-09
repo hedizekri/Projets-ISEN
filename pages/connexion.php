@@ -110,13 +110,21 @@ if(isset($_POST['connexion'])) { // si le bouton "Connexion" est appuyé
                     // on ouvre la session avec $_SESSION:
                     $_SESSION['identifiant'] = $identifiant;
                     $_SESSION['auth'] = 1; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le identifiant
-                    echo "Bonjour ". $_SESSION["identifiant"] ."";
+                    ?>
+                    <meta http-equiv="refresh" content="1; URL=connexion.php" />
+                    <?php
                 }
             }
         }
     }
 }
+
+echo "Bonjour ". $_SESSION["identifiant"] ."";
+
 ?>
+
+
+
 
          
 

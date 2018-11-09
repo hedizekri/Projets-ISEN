@@ -41,6 +41,17 @@ require('outils.php') ;
 
 <body>
 
+   <?php
+        try 
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
+        }
+        catch(Exception $e)
+        {
+            die('Erreur :' . $e -> getMessage());
+        }
+    ?>
+
             
 
     <!-- ******************************************************* -->
@@ -92,6 +103,33 @@ require('outils.php') ;
     <h1>Mon Compte</h1>
     <hr />
     
+        
+        
+    <?php
+
+        $reponse=$bdd->query("SELECT * FROM membres WHERE identifiant = '". $_SESSION['identifiant'] ."'");
+        while ($nom = $reponse->fetch()){
+        ?>
+        
+            <br/>
+            <?php echo "Identifiant : ".$nom['identifiant'].""; ?>
+            <br/>
+            <br/>
+            <?php echo "Mail : ".$nom['mail'].""; ?>
+            <br/>
+            <br/>
+            <?php echo "Nom : ".$nom['nom'].""; ?>
+            <br/>
+            <br/>
+            <?php echo "Prenom : ".$nom['prenom'].""; ?>
+            <br/>
+            <br/>
+            <?php echo "Date de Naissance : ".$nom['date'].""; ?>
+
+        
+    
+    <?php } ?>
+ 
 
     </div>
 
