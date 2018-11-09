@@ -20,15 +20,15 @@ echo
           <td>
 
                <li>
-                <a href="tous_les_produits.php">Tous les produits</a>
+                <a href="produits.php?all=all">Tous les produits</a>
                </li>
           </td>
           <td>
                <li>
                 <a href="#">Homme / Femme</a>
                 <ul>
-                        <li><a href="homme.php">Homme</a></li>
-                        <li><a href="femme.php">Femme</a></li>
+                        <li><a href="produits.php?sexe=H">Homme</a></li>
+                        <li><a href="produits.php?sexe=F">Femme</a></li>
                 </ul>
         </li>
           <td>
@@ -37,10 +37,10 @@ echo
           <td><li>
                 <a href="#">Par Type</a>
                 <ul>
-                        <li><a href="Costumes.php">Costumes</a></li>
-                        <li><a href="pantalons.php">Pantalons</a></li>
-                        <li><a href="pulls.php">Pulls</a></li>              
-                        <li><a href="chaussures.php">Chaussures</a></li>
+                        <li><a href="produits.php?produit=costume">Costumes</a></li>
+                        <li><a href="produits.php?produit=pantalon">Pantalons</a></li>
+                        <li><a href="produits.php?produit=pull">Pulls</a></li>              
+                        <li><a href="produits.php?produit=chaussure">Chaussures</a></li>
                 </ul>
         </li></td>';
         
