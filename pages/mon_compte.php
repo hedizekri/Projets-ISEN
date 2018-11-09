@@ -115,7 +115,7 @@ require('outils.php') ;
             <?php echo "Identifiant : ".$nom['identifiant'].""; ?>
             <br/>
             <br/>
-            <?php echo "Mail : ".$nom['mail'].""; ?> <form method="post" action="modifier.php"><input type="submit" value="modifier"/></form>
+            <?php echo "Mail : ".$nom['mail'].""; ?>
             <br/>
             <br/>
             <?php echo "Nom : ".$nom['nom'].""; ?>
