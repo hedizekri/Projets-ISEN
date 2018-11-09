@@ -124,6 +124,10 @@ echo
             <label>Cherche ta sap</label>
             <input type="text" name="search" size="30">
             <input type="submit" name="Valider" value="Valider">
+            </form>
+
+            <br/>
+            <br/>
           
 
           </div> ';     
