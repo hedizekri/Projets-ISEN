@@ -119,7 +119,7 @@ if(isset($_POST['identifiant'],$_POST['mdp'])){//l'utilisateur à cliqué sur "S
         if(!mysqli_query($mysqli,"INSERT INTO membres SET identifiant='".$_POST['identifiant']."', mdp='".md5($_POST['mdp'])."', mail='".$_POST['mail']."', nom='".$_POST['nom']."', prenom='".$_POST['prenom']."', date='".$_POST['date']."'")){//on crypte le mot de passe avec la fonction propre à PHP: md5()
             echo "Une erreur s'est produite: ".mysqli_error($mysqli);//je conseille de ne pas afficher les erreurs aux visiteurs mais de l'enregistrer dans un fichier log
         } else {
-            echo "Vous êtes inscrit avec succès!";
+            echo "Inscription réussie ! Veuillez vous connecter pour finaliser l'inscription.";
             //on affiche plus le formulaire
             $AfficherFormulaire=0;
         }
