@@ -94,7 +94,7 @@ echo
               echo '
               <td>
                 <li>
-                  <a href="connexion_inscription.php">Connexion / Inscritpion</a>
+                  <a href="connexion_inscription.php">Connexion / Inscription</a>
                   
                 </li>
               </td>';
@@ -104,7 +104,7 @@ echo
         {
           // affichage du bouton de connexion
           echo '<td><li>
-                <a href="connexion_inscription.php">Connexion / Inscritpion</a>
+                <a href="connexion_inscription.php">Connexion / Inscription</a>
                 
         </li></td>';
 
@@ -122,7 +122,7 @@ echo
 
             <form method="Post" action="search.php">
             <label>Cherche ta sap</label>
-            <input type="text" name="search" size="30">
+            <input type="text" name="recherche1" size="30">
             <input type="submit" name="Valider" value="Valider">
             </form>
 
