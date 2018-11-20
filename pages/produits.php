@@ -133,6 +133,9 @@ require('outils.php') ;
                 <th><?php echo $nom['unit_price']; ?>,00€</th>
                 <th>
                     <form method="Post" action="mon_panier.php">
+                        <input type="text" name="quantity" value="1" size="2" />
+                        <br/>
+                        <br/>
                         <input type="submit" name="panier" value="Ajouter a mon panier">
                     </form>
                 </th>
@@ -226,6 +229,9 @@ require('outils.php') ;
                 <th><?php echo $nom['unit_price']; ?>,00€</th>
                 <th>
                     <form method="Post" action="mon_panier.php">
+                        <input type="text" name="quantity" value="1" size="2" />
+                        <br/>
+                        <br/>
                         <input type="submit" name="panier" value="Ajouter a mon panier">
                     </form>
                 </th>
