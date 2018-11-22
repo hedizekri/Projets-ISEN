@@ -92,9 +92,13 @@ if(isset($_POST['connexion'])) {
 
             $MotDePasse = htmlentities($_POST['mdp'], ENT_QUOTES, "ISO-8859-1");
 
-            connexionBdd();
+            $mysqli = mysqli_connect("localhost", "root", "", "sap2lux");
 
-             else {
+            if(!$mysqli){
+                echo "Erreur de connexion à la base de données.";
+            }
+            else{
+
 
                 $Requete = mysqli_query($mysqli,"SELECT * FROM membres WHERE identifiant = '".$identifiant."' AND  mdp = '".md5($MotDePasse)."'");
 
@@ -112,6 +116,7 @@ if(isset($_POST['connexion'])) {
             }
         }
     }
+
 }
 
 echo "Bonjour ". $_SESSION["identifiant"] ."";

@@ -35,7 +35,14 @@ require('outils.php') ;
 
 
     <?php
-        connexionBdd();
+        try 
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
+        }
+        catch(Exception $e)
+        {
+            die('Erreur :' . $e -> getMessage());
+        }
     ?>
        
 
@@ -80,62 +87,71 @@ require('outils.php') ;
 
     
         
-    <?php
+<?php
 
-        if(isset($_GET['produit'])){ // si formulaire soumis
-            $produit = $_GET['produit'];
-            $reponse=$bdd->query('SELECT * FROM products WHERE type = "'.$produit.'"');
+    if(isset($_GET['produit'])){
+        $produit = $_GET['produit'];
+        $reponse=$bdd->query('SELECT * FROM products WHERE type = "'.$produit.'"');
 
-            ?>
-
-
-            <h1><?php 
-            if($produit=="costume") {
-                echo "Costumes";
-            }
-            if($produit=="pantalon") {
-                echo "Pantalons";
-            }
-            if($produit=="pull") {
-                echo "Pulls";
-            }
-            if($produit=="chaussures") {
-                echo "Chaussures";
-            }
-            ?></h1>
-
-            <table border="1" cellpadding="10">
-            <tr>
-                <th>Nom</th>
-                <th>Photo</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Panier</th>
-            </tr>
-
-            <?php
-
-            while ($nom = $reponse->fetch()){
-
-            ?>
-
-            <tr>
-                <th><?php echo $nom['name']; ?></th>
-                <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
-                <th><?php echo $nom['description']; ?></th>
-                <th><?php echo $nom['unit_price']; ?>,00€</th>
-                <th>
-                    <form method="Post" action="mon_panier.php">
-                        <input type="text" name="quantity" value="1" size="2" />
-                        <br/>
-                        <br/>
-                        <input type="submit" name="panier" value="Ajouter a mon panier">
-                    </form>
-                </th>
-            </tr>
-            
+        ?>
         
-    <?php }} ?>
+        <h1>
+        
+        <?php 
+        if($produit=="costume") {
+            echo "Costumes";
+        }
+        if($produit=="pantalon") {
+            echo "Pantalons";
+        }
+        if($produit=="pull") {
+            echo "Pulls";
+        }
+        if($produit=="chaussures") {
+            echo "Chaussures";
+        }
+
+        ?>
+        
+            </h1>
+
+                <table border="1" cellpadding="10">
+
+                    <tr>
+                        <th>Nom</th>
+                        <th>Photo</th>
+                        <th>Description</th>
+                        <th>Prix</th>
+                        <th>Panier</th>
+                    </tr>
+
+        <?php
+
+        while ($nom = $reponse->fetch()){
+
+            ?>
+
+                <tr>
+                    <th><?php echo $nom['name']; ?></th>
+                    <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
+                    <th><?php echo $nom['description']; ?></th>
+                    <th><?php echo $nom['unit_price']; ?>,00€</th>
+                    <th>
+                        <form method="Post" action="mon_panier.php">
+                            <input type="text" name="quantity" value="1" size="2" />
+                            <br/>
+                            <br/>
+                            <input type="submit" name="panier" value="Ajouter a mon panier">
+                        </form>
+                    </th>
+                </tr>
+                
+            
+        <?php 
+        }
+    } 
+
+?>
 
          </table>
 

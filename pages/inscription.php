@@ -88,7 +88,11 @@ require('outils.php') ;
      
 
  
-connexionBdd();
+ $mysqli = mysqli_connect("localhost", "root", "", "sap2lux");
+
+            if(!$mysqli){
+                echo "Erreur de connexion à la base de données.";
+            } else {
  
 $AfficherFormulaire=1;
 
@@ -121,6 +125,7 @@ if(isset($_POST['identifiant'],$_POST['mdp'])){
             $AfficherFormulaire=0;
         }
     }
+}
 }
 if($AfficherFormulaire==1){
     ?>
