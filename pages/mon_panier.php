@@ -41,6 +41,7 @@ require('outils.php') ;
 
 <body>
 
+
   <?php
         try 
         {
@@ -103,13 +104,17 @@ require('outils.php') ;
     <h1>Mon Panier</h1>
     <hr />
 
-     <?php
+      <?php
 
-        if(isset($_GET['panier'])){ // si formulaire soumis
-            $panier = $_GET['panier'];
-            echo $panier;
+          if(isset($_GET['id'])){
+          $panier = $_GET['id'];
+          echo "'".$panier."'";
 
-            ?>
+
+          $reponse=$bdd->query("INSERT INTO order_products SET identifiant='".$_SESSION['identifiant']."', product_id='".$panier."' ");
+        }
+
+      ?>
 
 
     
