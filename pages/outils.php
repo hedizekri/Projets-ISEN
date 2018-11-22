@@ -1,4 +1,14 @@
 <?php 
+function connexionBdd() {
+
+  echo "$mysqli = mysqli_connect("localhost", "root", "", "sap2lux");
+
+            if(!$mysqli){
+                echo "Erreur de connexion à la base de données.";
+            }";
+
+}
+
 
 function afficheTitre() {
 
