@@ -86,44 +86,46 @@ require('outils.php') ;
 
         <?php
      
-    /* page: inscription.php */
+
  
-//connexion à la base de données:
-$BDD = array();
-$BDD['host'] = "localhost";
-$BDD['user'] = "root";
-$BDD['pass'] = "";
-$BDD['db'] = "sap2lux";
-$mysqli = mysqli_connect($BDD['host'], $BDD['user'], $BDD['pass'], $BDD['db']);
-if(!$mysqli) {
-    echo "Connexion non établie.";
-    exit;
-}
+ $mysqli = mysqli_connect("localhost", "root", "", "sap2lux");
+
+            if(!$mysqli){
+                echo "Erreur de connexion à la base de données.";
+            } else {
  
 $AfficherFormulaire=1;
-//traitement du formulaire:
-if(isset($_POST['identifiant'],$_POST['mdp'])){//l'utilisateur à cliqué sur "S'inscrire", on demande donc si les champs sont défini avec "isset"
-    if(empty($_POST['identifiant'])){//le champ identifiant est vide, on arrête l'exécution du script et on affiche un message d'erreur
+
+if(isset($_POST['identifiant'],$_POST['mdp'])){
+
+    if(empty($_POST['identifiant'])){
         echo "Le champ identifiant est vide.";
-    } elseif(!preg_match("#^[a-z0-9]+$#",$_POST['identifiant'])){//le champ identifiant est renseigné mais ne convient pas au format qu'on souhaite qu'il soit, soit: que des lettres minuscule + des chiffres (je préfère personnellement enregistrer le identifiant de mes membres en minuscule afin de ne pas avoir deux identifiant identique mais différents comme par exemple: Admin et admin)
+
+    } elseif(!preg_match("#^[a-z0-9]+$#",$_POST['identifiant'])){
+
         echo "Le identifiant doit être renseigné en lettres minuscules sans accents, sans caractères spéciaux.";
-    } elseif(strlen($_POST['identifiant'])>25){//le identifiant est trop long, il dépasse 25 caractères
+
+    } elseif(strlen($_POST['identifiant'])>25){
         echo "Le identifiant est trop long, il dépasse 25 caractères.";
-    } elseif(empty($_POST['mdp'])){//le champ mot de passe est vide
+
+    } elseif(empty($_POST['mdp'])){
         echo "Le champ Mot de passe est vide.";
-    } elseif(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM membres WHERE identifiant='".$_POST['identifiant']."'"))==1){//on vérifie que ce identifiant n'est pas déjà utilisé par un autre membre
+
+    } elseif(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM membres WHERE identifiant='".$_POST['identifiant']."'"))==1){
         echo "Ce identifiant est déjà utilisé.";
+
     } else {
-        //toutes les vérifications sont faites, on passe à l'enregistrement dans la base de données:
-        //Bien évidement il s'agit là d'un script simplifié au maximum, libre à vous de rajouter des conditions avant l'enregistrement comme la longueur minimum du mot de passe par exemple
-        if(!mysqli_query($mysqli,"INSERT INTO membres SET identifiant='".$_POST['identifiant']."', mdp='".md5($_POST['mdp'])."', mail='".$_POST['mail']."', nom='".$_POST['nom']."', prenom='".$_POST['prenom']."', date='".$_POST['date']."'")){//on crypte le mot de passe avec la fonction propre à PHP: md5()
-            echo "Une erreur s'est produite: ".mysqli_error($mysqli);//je conseille de ne pas afficher les erreurs aux visiteurs mais de l'enregistrer dans un fichier log
+
+        if(!mysqli_query($mysqli,"INSERT INTO membres SET identifiant='".$_POST['identifiant']."', mdp='".md5($_POST['mdp'])."', mail='".$_POST['mail']."', nom='".$_POST['nom']."', prenom='".$_POST['prenom']."', date='".$_POST['date']."'")){
+            echo "Une erreur s'est produite: ".mysqli_error($mysqli);
+
         } else {
             echo "Inscription réussie ! Veuillez vous connecter pour finaliser l'inscription.";
-            //on affiche plus le formulaire
+
             $AfficherFormulaire=0;
         }
     }
+}
 }
 if($AfficherFormulaire==1){
     ?>
