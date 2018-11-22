@@ -102,6 +102,16 @@ require('outils.php') ;
     <div id="contenu">
     <h1>Mon Panier</h1>
     <hr />
+
+     <?php
+
+        if(isset($_GET['panier'])){ // si formulaire soumis
+            $panier = $_GET['panier'];
+            echo $panier;
+
+            ?>
+
+
     
 
     </div>
