@@ -138,6 +138,12 @@ require('outils.php') ;
                     <th><?php echo $nom['unit_price']; ?>,00€</th>
                     <th>
 
+                        <form action="mon_panier.php" method="GET">
+                            
+                            <input type="number" name="quantity" min="0" max="100" step="1" value="1" size="2">
+                            <input type="submit" name="Ajouter au panier">
+
+                        </form>
 
                         <?php
                         $quantity = 1;

@@ -173,6 +173,7 @@ require('outils.php') ;
               <th>Image</th>
               <th>Prix</th>
               <th>Quantité</th>
+              <th>Supprimer</th>
           </tr>
 
       <?php
@@ -186,6 +187,7 @@ require('outils.php') ;
                     <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
                     <th><?php echo $nom['unit_price']; ?>,00€</th>
                     <th><?php echo $nom['quantity']; ?></th>
+                    <th><?php echo '<a href="delete.php?product_name=', urlencode($nom['product_name']), '">Supprimer</a>'; ?></th>
                 </tr>
                 
             
