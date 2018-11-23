@@ -94,42 +94,51 @@ require('outils.php') ;
     
     
     
-        
+    
     <?php
         $reponse=$bdd->query("SELECT * FROM products WHERE name LIKE \"%$recherche1%\"");
+        $req = $bdd->query("SELECT * FROM products WHERE name LIKE \"%$recherche1%\"");
     if(($recherche1 == "")||($recherche1 == "%")) 
         {
         echo "Veuillez entrer un mot clé s'il vous plaît!";
         }
     else
          {
-            ?>
-        
-            <table border="1" cellpadding="10">
-            <tr>
-            <th>Nom</th>
-            <th>Photo</th>
-            <th>Description</th>
-            <th>Prix</th>
-            <th>Panier</th>
-            </tr> 
-            <?php
-
-            while ($nom = $reponse->fetch()){
-            ?>
-            <tr>
-            <th><?php echo $nom['name']; ?></th>
-            <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
-            <th><?php echo $nom['description']; ?></th>
-            <th><?php echo $nom['unit_price']; ?>,00€</th>
-            <th>
+            if($req->fetch() == FALSE)
+                {
+                echo "Aucun article n'a été trouvé";
+                }
+            else
+                {
+                ?>
+                <table border="1" cellpadding="10">
+                <tr>
+                <th>Nom</th>
+                <th>Photo</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Panier</th>
+                </tr> 
                     
-            <form method="Post" action="mon_panier.php">
-            <input type="submit" name="panier" value="Ajouter a mon panier">
-            </form>
-            </th>
-            </tr>
-            <?php }}?>
+                <?php
+                while ($nom = $reponse->fetch())
+                {
+                ?>
+                <tr>
+                <th><?php echo $nom['name']; ?></th>
+                <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
+                <th><?php echo $nom['description']; ?></th>
+                <th><?php echo $nom['unit_price']; ?>,00€</th>
+                <th>
+                    
+                <form method="Post" action="mon_panier.php">
+                <input type="submit" name="panier" value="Ajouter a mon panier">
+                </form>
+                </th>
+                </tr>
+                <?php
+                }
+                }}?>
     </table>
     
 
@@ -152,7 +161,7 @@ require('outils.php') ;
 
        <?php
         afficheFooter();
-    ?>  
+        ?>  
 
     </footer> <!-- fin du pied de page -->
 
@@ -165,12 +174,3 @@ require('outils.php') ;
 
 
 </html> 
-
-
-
-
-
-
-
-
-
