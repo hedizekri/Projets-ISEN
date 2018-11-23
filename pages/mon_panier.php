@@ -41,6 +41,7 @@ require('outils.php') ;
 
 <body>
 
+
   <?php
         try 
         {
@@ -102,6 +103,31 @@ require('outils.php') ;
     <div id="contenu">
     <h1>Mon Panier</h1>
     <hr />
+
+      <?php
+
+          if(isset($_GET['id'])){
+          $panier = $_GET['id'];
+          $identifiant = $_SESSION['identifiant'];
+          echo "'".$panier."'";
+
+
+
+          
+
+          $req = $bdd->prepare('INSERT INTO orders2(identifiant, product_id) VALUES(:identifiant, :product_id)');
+
+$req->execute(array(
+
+    'identifiant' => $identifiant,
+
+    'product_id' => $panier,
+  ));
+        }
+
+      ?>
+
+
     
 
     </div>
@@ -133,6 +159,7 @@ require('outils.php') ;
 
 
 </body>
+
 
 
 
