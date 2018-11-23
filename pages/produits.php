@@ -138,7 +138,7 @@ require('outils.php') ;
                     <th><?php echo $nom['unit_price']; ?>,00€</th>
                     <th>
 
-                        <a href="mon_panier.php?name= <?php echo $nom['name']; ?>, unit_price= <?php echo $nom['unit_price']; ?>">ajouter au panier</a>
+                        <a href="mon_panier.php?name= <?php echo $nom['name']; ?> &unit_price= <?php echo $nom['unit_price']; ?>">ajouter au panier</a>
 
 
                     </th>
