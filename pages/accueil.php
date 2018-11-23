@@ -65,6 +65,17 @@ require('outils.php') ;
         afficheMenu();
 
       ?>   
+        
+    <?php
+        try 
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
+        }
+        catch(Exception $e)
+        {
+            die('Erreur :' . $e -> getMessage());
+        }
+    ?>
     
     </div> <!-- fin menu -->
 
@@ -77,37 +88,43 @@ require('outils.php') ;
     <!-- ******************************************************* -->
 
     
+    <?php
+    $reponse=$bdd->query("SELECT * FROM products");
+    ?>
+                    
+    <?php
+        $arrayindex = 0;
+        while ($nom = $reponse->fetch())
+        {
+            $arrayindex = $arrayindex + 1;
+        } 
+    ?>
 
+        
     <div id="contenu">
-
-    
       <br>
       <br>
-
-
         <h1> 
             <img src="../images/nouveautes.png" class="titre_style" >
-
         </h1>
-
         <br>    
-    <div class="slideshow-container">
+        <div class="slideshow-container">
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
-          <img src="../images/suit.jpg" class="image_diapo">
+          <a href="https://education.francetv.fr/"><img id="imageddb" src="../images/images produit/<?php echo $arrayindex?>.png" /></a>
           <div class="text_diapo">Costume</div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
-          <img src="../images/pantalon.jpg" class="image_diapo">
+          <a href="https://education.francetv.fr/"><img id="imageddb2" src="../images/images produit/<?php echo $arrayindex-1?>.png" /></a>
           <div class="text_diapo">Pantalon</div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
-          <img src="../images/chaussure.jpg" class="image_diapo">
+          <a href="https://education.francetv.fr/"><img id="imageddb3" src="../images/images produit/<?php echo $arrayindex-2?>.png" /></a>
           <div class="text_diapo">Chaussures</div>
         </div>
         
