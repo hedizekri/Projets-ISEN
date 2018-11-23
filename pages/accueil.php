@@ -40,6 +40,17 @@ require('outils.php') ;
 
 <body>
 
+  <?php
+        try 
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
+        }
+        catch(Exception $e)
+        {
+            die('Erreur :' . $e -> getMessage());
+        }
+    ?>
+
             
 
     <!-- ******************************************************* -->
@@ -179,6 +190,32 @@ require('outils.php') ;
      Retrouvez toutes nos promos et bons plans directement en magasin.
 
     </p>
+
+    <h1>FAQ</h1>
+
+    <p>Posez nous vos questions !</p>
+
+    <form action="faq.php" method="post">
+        <p>
+        <label for="message">Message</label> :  <input type="text" name="message" id="message" maxlength="128" size="64" /><br />
+
+        <input type="submit" value="Envoyer" />
+  </p>
+    </form>
+
+    <?php
+
+$reponse = $bdd->query('SELECT identifiant, message FROM faq ORDER BY ID DESC LIMIT 0, 10');
+
+while ($donnees = $reponse->fetch())
+
+{
+  echo '<p><strong>' . htmlspecialchars($donnees['identifiant']) . '</strong> : ' . htmlspecialchars($donnees['message']) . '</p>';
+}
+
+$reponse->closeCursor();
+
+?>
 
     
 
