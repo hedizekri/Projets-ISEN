@@ -109,21 +109,18 @@ require('outils.php') ;
           if(isset($_GET['id'])){
           $panier = $_GET['id'];
           $identifiant = $_SESSION['identifiant'];
-          echo "'".$panier."'";
 
 
+            $req = $bdd->prepare('INSERT INTO orders2(identifiant, product_id) VALUES(:identifiant, :product_id)');
 
-          
+              $req->execute(array(
 
-          $req = $bdd->prepare('INSERT INTO orders2(identifiant, product_id) VALUES(:identifiant, :product_id)');
+                'identifiant' => $identifiant,
 
-$req->execute(array(
-
-    'identifiant' => $identifiant,
-
-    'product_id' => $panier,
-  ));
-        }
+                'product_id' => $panier,
+              )
+            );
+          }
 
       ?>
 
