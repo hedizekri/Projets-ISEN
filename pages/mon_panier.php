@@ -161,6 +161,8 @@ require('outils.php') ;
 
       <?php
 
+      $total = 0;
+
       if(isset($_SESSION['identifiant'])){
         $reponse=$bdd->query("SELECT * FROM orders2 WHERE identifiant = '".$_SESSION['identifiant']."'");
 
@@ -173,6 +175,7 @@ require('outils.php') ;
               <th>Image</th>
               <th>Prix</th>
               <th>Quantité</th>
+              <th>Supprimer</th>
           </tr>
 
       <?php
@@ -181,11 +184,17 @@ require('outils.php') ;
 
       ?>
 
+       <?php $price = $nom['unit_price']*$nom['quantity'];
+       $total = $total + $price;
+       ?>
+
+
                 <tr>
                     <th><?php echo $nom['product_name']; ?></th>
                     <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
-                    <th><?php echo $nom['unit_price']; ?>,00€</th>
+                    <th><?php echo $price; ?>,00€</th>
                     <th><?php echo $nom['quantity']; ?></th>
+                    <th><?php echo '<a href="delete.php?product_name=', urlencode($nom['product_name']), '">Supprimer</a>'; ?></th>
                 </tr>
                 
             
@@ -198,6 +207,8 @@ require('outils.php') ;
 
 
       </table>
+
+      <p>Total : <?php echo $total; ?>,00 €</p>
 
 
     
