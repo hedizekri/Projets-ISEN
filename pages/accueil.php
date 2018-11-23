@@ -94,8 +94,11 @@ require('outils.php') ;
                     
     <?php
         $arrayindex = 0;
+        $arraynom = array();
+        $arraynom[0] = "";
         while ($nom = $reponse->fetch())
         {
+            array_push($arraynom, $nom['name']);
             $arrayindex = $arrayindex + 1;
         } 
     ?>
@@ -112,20 +115,20 @@ require('outils.php') ;
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
-          <a href="https://education.francetv.fr/"><img id="imageddb" src="../images/images produit/<?php echo $arrayindex?>.png" /></a>
-          <div class="text_diapo">Costume</div>
+          <a href="produits.php?all=all"><img class="image_diapo" src="../images/images produit/<?php echo $arrayindex?>.png" /></a>
+          <div class="text_diapo"><?php echo $arraynom[$arrayindex]?></div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
-          <a href="https://education.francetv.fr/"><img id="imageddb2" src="../images/images produit/<?php echo $arrayindex-1?>.png" /></a>
-          <div class="text_diapo">Pantalon</div>
+          <a href="produits.php?all=all"><img class="image_diapo" src="../images/images produit/<?php echo $arrayindex-1?>.png" /></a>
+          <div class="text_diapo"><?php echo $arraynom[$arrayindex-1]?></div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
-          <a href="https://education.francetv.fr/"><img id="imageddb3" src="../images/images produit/<?php echo $arrayindex-2?>.png" /></a>
-          <div class="text_diapo">Chaussures</div>
+          <a href="produits.php?all=all"><img class="image_diapo" src="../images/images produit/<?php echo $arrayindex-2?>.png" /></a>
+          <div class="text_diapo"><?php echo $arraynom[$arrayindex-2]?></div>
         </div>
         
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
