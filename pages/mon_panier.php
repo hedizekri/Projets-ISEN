@@ -114,6 +114,27 @@ require('outils.php') ;
 
           $identifiant = $_SESSION['identifiant'];
 
+          $reponse = $bdd->query('SELECT quantity FROM orders2 WHERE identifiant =  "'. $identifiant .'" AND product_name = "'. $product_name .'"');
+
+          $product_quantity = $reponse->fetch();
+          if(!empty($product_quantity)) {
+
+           $nvquantity = $product_quantity['quantity'] + 1;
+
+              $req = $bdd->prepare('UPDATE orders2 SET quantity = :nvquantity WHERE product_name = :product_name AND identifiant = :identifiant');
+
+              $req->execute(array(
+
+                'nvquantity' => $nvquantity,
+
+                'product_name' => $product_name,
+
+                'identifiant' => $identifiant,
+
+              )
+            );
+
+          } else {
 
             $req = $bdd->prepare('INSERT INTO orders2(identifiant, product_name, unit_price, quantity, image) VALUES(:identifiant, :product_name, :unit_price, :quantity, :image)');
 
@@ -130,6 +151,10 @@ require('outils.php') ;
                 'image' => $image,
               )
             );
+
+          }
+
+
           }
 
       ?>

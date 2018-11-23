@@ -207,7 +207,8 @@ require('outils.php') ;
                 <th><?php echo $nom['unit_price']; ?>,00€</th>
                 <th>
                     <?php
-                        echo '<a href="mon_panier.php?name=', urlencode($nom['name']), '&unit_price=', urlencode($nom['unit_price']), '">ajouter au panier</a>';
+                        $quantity = 1;
+                        echo '<a href="mon_panier.php?name=', urlencode($nom['name']), '&unit_price=', urlencode($nom['unit_price']), '&quantity=', urlencode($quantity), '&image=', urlencode($nom['image']), '">ajouter au panier</a>';
                         ?>
                 </th>
             </tr>
@@ -253,7 +254,8 @@ require('outils.php') ;
                 <th><?php echo $nom['unit_price']; ?>,00€</th>
                 <th>
                     <?php
-                        echo '<a href="mon_panier.php?name=', urlencode($nom['name']), '&unit_price=', urlencode($nom['unit_price']), '">ajouter au panier</a>';
+                        $quantity = 1;
+                        echo '<a href="mon_panier.php?name=', urlencode($nom['name']), '&unit_price=', urlencode($nom['unit_price']), '&quantity=', urlencode($quantity), '&image=', urlencode($nom['image']), '">ajouter au panier</a>';
                         ?>
                 </th>
             </tr>
