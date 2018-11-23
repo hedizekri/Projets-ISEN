@@ -97,7 +97,7 @@ require('outils.php') ;
         // redirection
         header("location:connexion_inscription.php");
     } 
-?>
+    ?>
 
 
     <div id="contenu">
