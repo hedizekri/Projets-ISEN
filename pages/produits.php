@@ -138,13 +138,13 @@ require('outils.php') ;
                     <th><?php echo $nom['unit_price']; ?>,00€</th>
                     <th>
 
-                        <a href="mon_panier.php?name= <?php echo $nom['name']; ?> &unit_price= <?php echo $nom['unit_price']; ?>">ajouter au panier</a>
+                        <a href="mon_panier.php?name= <?php echo $nom['name']; ?>">ajouter au panier</a>
 
 
                     </th>
 
                     <!-- <th>
-                        <form method="Post" action="mon_panier.php">
+                        <form method="Post2" action="mon_panier.php">
                             <input type="text" name="quantity" value="1" size="2" />
                             <br/>
                             <br/>
@@ -279,6 +279,26 @@ require('outils.php') ;
       ?> 
 
     </footer> <!-- fin du pied de page -->
+
+
+
+
+
+</body>
+
+
+
+</html> 
+
+
+
+
+
+
+
+
+
+de page -->
 
 
 
