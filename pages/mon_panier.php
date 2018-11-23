@@ -106,13 +106,37 @@ require('outils.php') ;
 
       <?php
 
-          if(isset($_GET['name'],$_GET['unit_price'])){
-          $unit_price = $_POST['unit_price'];
+          if(isset($_GET['name'],$_GET['unit_price'],$_GET['quantity'],$_GET['image'])){
+          $unit_price = $_GET['unit_price'];
           $product_name = $_GET['name'];
+          $quantity = $_GET['quantity'];
+          $image = $_GET['image'];
+
           $identifiant = $_SESSION['identifiant'];
 
+          $reponse = $bdd->query('SELECT quantity FROM orders2 WHERE identifiant =  "'. $identifiant .'" AND product_name = "'. $product_name .'"');
 
-            $req = $bdd->prepare('INSERT INTO orders2(identifiant, product_name, unit_price) VALUES(:identifiant, :product_name, unit_price)');
+          $product_quantity = $reponse->fetch();
+          if(!empty($product_quantity)) {
+
+           $nvquantity = $product_quantity['quantity'] + 1;
+
+              $req = $bdd->prepare('UPDATE orders2 SET quantity = :nvquantity WHERE product_name = :product_name AND identifiant = :identifiant');
+
+              $req->execute(array(
+
+                'nvquantity' => $nvquantity,
+
+                'product_name' => $product_name,
+
+                'identifiant' => $identifiant,
+
+              )
+            );
+
+          } else {
+
+            $req = $bdd->prepare('INSERT INTO orders2(identifiant, product_name, unit_price, quantity, image) VALUES(:identifiant, :product_name, :unit_price, :quantity, :image)');
 
               $req->execute(array(
 
@@ -121,13 +145,59 @@ require('outils.php') ;
                 'product_name' => $product_name,
 
                 'unit_price' => $unit_price,
+
+                'quantity' => $quantity,
+
+                'image' => $image,
               )
             );
+
+          }
+
+
           }
 
       ?>
 
+      <?php
 
+      if(isset($_SESSION['identifiant'])){
+        $reponse=$bdd->query("SELECT * FROM orders2 WHERE identifiant = '".$_SESSION['identifiant']."'");
+
+      ?>
+
+        <table border="1" cellpadding="10">
+
+          <tr>
+              <th>Nom</th>
+              <th>Image</th>
+              <th>Prix</th>
+              <th>Quantité</th>
+          </tr>
+
+      <?php
+
+        while ($nom = $reponse->fetch()){
+
+      ?>
+
+                <tr>
+                    <th><?php echo $nom['product_name']; ?></th>
+                    <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
+                    <th><?php echo $nom['unit_price']; ?>,00€</th>
+                    <th><?php echo $nom['quantity']; ?></th>
+                </tr>
+                
+            
+      <?php 
+        }
+      } 
+
+    ?>
+
+
+
+      </table>
 
 
     
