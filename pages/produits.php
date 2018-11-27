@@ -147,7 +147,7 @@ require('outils.php') ;
 
                         <form action="mon_panier.php" method="GET">
                             
-                            <input type="number" name="quantity" min="1" max="100" step="1" value="1" size="2">
+                            <input type="number" name="quantity" min="1" max="100" step="1" value="1" style="width: 50px;">
                             <input type="hidden" name="name" value="<?php echo($name); ?>" />
                             <input type="hidden" name="unit_price" value="<?php echo($unit_price); ?>" />
                             <input type="hidden" name="image" value="<?php echo($image); ?>" />
@@ -218,7 +218,7 @@ require('outils.php') ;
 
                         <form action="mon_panier.php" method="GET">
                             
-                            <input type="number" name="quantity" min="1" max="100" step="1" value="1" size="2">
+                            <input type="number" name="quantity" min="1" max="100" step="1" value="1" style="width: 50px;">
                             <input type="hidden" name="name" value="<?php echo($name); ?>" />
                             <input type="hidden" name="unit_price" value="<?php echo($unit_price); ?>" />
                             <input type="hidden" name="image" value="<?php echo($image); ?>" />
@@ -278,7 +278,7 @@ require('outils.php') ;
 
                         <form action="mon_panier.php" method="GET">
                             
-                            <input type="number" name="quantity" min="1" max="100" step="1" value="1" size="2">
+                            <input type="number" name="quantity" min="1" max="100" step="1" value="1" style="width: 50px;">
                             <input type="hidden" name="name" value="<?php echo($name); ?>" />
                             <input type="hidden" name="unit_price" value="<?php echo($unit_price); ?>" />
                             <input type="hidden" name="image" value="<?php echo($image); ?>" />
