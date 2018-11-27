@@ -121,6 +121,9 @@ require('outils.php') ;
         <h1> 
             <img src="../images/nouveautes.png" class="titre_style" >
         </h1>
+        <h3 class="accueil_text">
+            Découvrez les derniers articles parus :
+        </h3>
         <br>    
         <div class="slideshow-container">
 
@@ -215,7 +218,7 @@ require('outils.php') ;
 
     <div class="accueil_text">
 
-    <h1>FAQ</h1>
+    <h1> FAQ </h1>
 
     <p>Posez nous vos questions !</p>
 
