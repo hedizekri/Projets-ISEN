@@ -148,7 +148,7 @@ require('outils.php') ;
         </div>
         <br>
         
-        <div style="text-align:center">
+        <div style="margin-left: 17%;">
           <span class="dot" onclick="currentSlide(1)"></span> 
           <span class="dot" onclick="currentSlide(2)"></span> 
           <span class="dot" onclick="currentSlide(3)"></span> 
@@ -191,11 +191,11 @@ require('outils.php') ;
             <img src="../images/actu.png" class="titre_style" >
         </h1>
         
-        <h3>
+        <h3 class="accueil_text">
             Découvrez nos nouvelles gammes de costumes !
         </h3>
         
-        <p>Stock renouvelé toutes les semaines.</p>
+        <p class="accueil_text">Stock renouvelé toutes les semaines.</p>
     </div>
     <br>
     <p>
@@ -205,13 +205,15 @@ require('outils.php') ;
 
     </p>
 
-    <p>
+    <p class="accueil_text">
 
      Retrouvez toutes nos promos et bons plans directement en magasin.
 
     </p>
 
     <br/>
+
+    <div class="accueil_text">
 
     <h1>FAQ</h1>
 
@@ -241,7 +243,7 @@ $reponse->closeCursor();
 
 ?>
 
-    
+    </div>
 
     </div> <!-- fin contenu -->
 

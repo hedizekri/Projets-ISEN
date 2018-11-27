@@ -1,8 +1,11 @@
-
 body {
     background-color: #e7e1d6;
     padding-bottom: 10%;
 } 
+
+.accueil_text {
+  margin-left: 3%;
+}
 
 .contenu {
   background-attachment: fixed;
@@ -192,7 +195,7 @@ html>body #menu_deroulant li ul ul
 .slideshow-container {
   max-width: 30%;
   position: relative;
-  margin: auto;
+  margin-left: 5%;
 }
 
 /* Bouttons suivant et precedent */
@@ -222,9 +225,9 @@ html>body #menu_deroulant li ul ul
 }
 
 /* Caption text */
-.text_diapo { 
-  background-color: #1b1100;
-  font-family: Adobe Gurmukhi Regular
+.text_diapo {
+  color: white;
+  background-color: grey;
   font-size: 15px;
   margin-left: 25%;
   bottom: 8px;
@@ -236,8 +239,8 @@ html>body #menu_deroulant li ul ul
 /* numero de la diapo image */
 .numbertext {
   color: black;
-  font-size: 200px;
-  padding: center;
+  font-size: 12px;
+  padding: 8px 12px;
   position: absolute;
   top: 0;
 }
@@ -278,7 +281,6 @@ html>body #menu_deroulant li ul ul
 
 
 /* Fin Images defilantes */
-
 
 .bouton p a {
 display:block;
