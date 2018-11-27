@@ -68,7 +68,7 @@ echo
            echo'
             <td>
               <li>
-                <a href="mon_compte.php"> Mon compte </a>
+                <a href="mon_compte.php"> '.$_SESSION["identifiant"].' </a>
               </li>
             </td>';
           }

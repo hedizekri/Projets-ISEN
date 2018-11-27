@@ -103,16 +103,16 @@ if(isset($_POST['identifiant'],$_POST['mdp'])){
 
     } elseif(!preg_match("#^[a-z0-9]+$#",$_POST['identifiant'])){
 
-        echo "Le identifiant doit être renseigné en lettres minuscules sans accents, sans caractères spéciaux.";
+        echo "L'identifiant doit être renseigné en lettres minuscules sans accents, sans caractères spéciaux.";
 
     } elseif(strlen($_POST['identifiant'])>25){
-        echo "Le identifiant est trop long, il dépasse 25 caractères.";
+        echo "L'identifiant est trop long, il dépasse 25 caractères.";
 
     } elseif(empty($_POST['mdp'])){
-        echo "Le champ Mot de passe est vide.";
+        echo "Le champ mot de passe est vide.";
 
     } elseif(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM membres WHERE identifiant='".$_POST['identifiant']."'"))==1){
-        echo "Ce identifiant est déjà utilisé.";
+        echo "Cet identifiant est déjà utilisé.";
 
     } else {
 

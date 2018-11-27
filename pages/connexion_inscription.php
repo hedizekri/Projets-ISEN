@@ -152,18 +152,21 @@ require('outils.php') ;
         <br/>
         <br/>
 
-        <label>Identifiant</label>
+        <label>Identifiant *</label>
 
         <input type="text" name="identifiant" />
 
         <br/>
         <br/>
 
-        <label>Mot de passe</label>
+        <label>Mot de passe *</label>
 
         <input type="password" name="mdp" />
 
         <br/>
+
+        <p style="font-size: 12px; font-style: italic;" >* champs obligatoires</p>
+
         <br/>
 
         <input type="submit" value="Valider"/>
