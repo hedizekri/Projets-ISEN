@@ -76,6 +76,17 @@ require('outils.php') ;
         afficheMenu();
 
       ?>   
+        
+    <?php
+        try 
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=sap2lux;charset=utf8', 'root', '');
+        }
+        catch(Exception $e)
+        {
+            die('Erreur :' . $e -> getMessage());
+        }
+    ?>
     
     </div> <!-- fin menu -->
 
@@ -88,38 +99,47 @@ require('outils.php') ;
     <!-- ******************************************************* -->
 
     
+    <?php
+    $reponse=$bdd->query("SELECT * FROM products");
+    ?>
+                    
+    <?php
+        $arrayindex = 0;
+        $arraynom = array();
+        $arraynom[0] = "";
+        while ($nom = $reponse->fetch())
+        {
+            array_push($arraynom, $nom['name']);
+            $arrayindex = $arrayindex + 1;
+        } 
+    ?>
 
+        
     <div id="contenu">
-
-    
       <br>
       <br>
-
-
         <h1> 
             <img src="../images/nouveautes.png" class="titre_style" >
-
         </h1>
-
         <br>    
-    <div class="slideshow-container">
+        <div class="slideshow-container">
 
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
-          <img src="../images/suit.jpg" class="image_diapo">
-          <div class="text_diapo">Costume</div>
+          <a href="produits.php?all=all"><img class="image_diapo" src="../images/images produit/<?php echo $arrayindex?>.png" /></a>
+          <div class="text_diapo"><?php echo $arraynom[$arrayindex]?></div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
-          <img src="../images/pantalon.jpg" class="image_diapo">
-          <div class="text_diapo">Pantalon</div>
+          <a href="produits.php?all=all"><img class="image_diapo" src="../images/images produit/<?php echo $arrayindex-1?>.png" /></a>
+          <div class="text_diapo"><?php echo $arraynom[$arrayindex-1]?></div>
         </div>
         
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
-          <img src="../images/chaussure.jpg" class="image_diapo">
-          <div class="text_diapo">Chaussures</div>
+          <a href="produits.php?all=all"><img class="image_diapo" src="../images/images produit/<?php echo $arrayindex-2?>.png" /></a>
+          <div class="text_diapo"><?php echo $arraynom[$arrayindex-2]?></div>
         </div>
         
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
