@@ -106,7 +106,11 @@ require('outils.php') ;
          {
             if($req->fetch() == FALSE)
                 {
-                echo "Aucun article n'a été trouvé";
+                echo "Hum... on est désolé, mais aucun article n'a été trouvé. ";
+                ?>
+                <br>
+                <?php
+                echo "Continuez vos recherches pour trouver votre perlouze :)";
                 }
             else
                 {
