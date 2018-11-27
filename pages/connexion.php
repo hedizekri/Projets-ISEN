@@ -85,7 +85,7 @@ if(isset($_POST['connexion'])) {
     } else {
         
         if(empty($_POST['mdp'])) {
-            echo "Le champ Mot de passe est vide.";
+            echo "Le champ mot de passe est vide.";
         } else {
             
             $identifiant = htmlentities($_POST['identifiant'], ENT_QUOTES, "ISO-8859-1");
@@ -109,6 +109,8 @@ if(isset($_POST['connexion'])) {
                     $_SESSION['identifiant'] = $identifiant;
                     $_SESSION['auth'] = 1; 
 
+                    echo "Bonjour ". $_SESSION["identifiant"] ."";
+
                     ?>
                     <meta http-equiv="refresh" content="1; URL=connexion.php" />
                     <?php
@@ -118,8 +120,6 @@ if(isset($_POST['connexion'])) {
     }
 
 }
-
-echo "Bonjour ". $_SESSION["identifiant"] ."";
 
 ?>
 

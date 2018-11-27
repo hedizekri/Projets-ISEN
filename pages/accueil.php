@@ -211,6 +211,8 @@ require('outils.php') ;
 
     </p>
 
+    <br/>
+
     <h1>FAQ</h1>
 
     <p>Posez nous vos questions !</p>
