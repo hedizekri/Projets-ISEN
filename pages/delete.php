@@ -106,7 +106,7 @@ require('outils.php') ;
 
     <?php
 
-    if(isset($_GET['product_name'])){
+    if(isset($_GET['product_name'], $_GET['delete'])){
           $product_name = $_GET['product_name'];
           $identifiant = $_SESSION['identifiant'];
 

@@ -109,7 +109,7 @@ require('outils.php') ;
           if(isset($_GET['cart'], $_GET['name'],$_GET['unit_price'],$_GET['quantity'],$_GET['image'])){
           $unit_price = $_GET['unit_price'];
           $product_name = $_GET['name'];
-          $quantity = $_GET['quantity'];
+          $quantity = htmlentities($_GET['quantity'], ENT_QUOTES, "ISO-8859-1");
           $image = $_GET['image'];
 
           $identifiant = $_SESSION['identifiant'];
@@ -194,7 +194,14 @@ require('outils.php') ;
                     <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
                     <th><?php echo $price; ?>,00€</th>
                     <th><?php echo $nom['quantity']; ?></th>
-                    <th><?php echo '<a href="delete.php?product_name=', urlencode($nom['product_name']), '">Supprimer</a>'; ?></th>
+                    <?php $product_name = $nom['product_name']; ?>
+
+                    <th><form action="delete.php" method="GET">
+                            
+                            <input type="hidden" name="product_name" value="<?php echo($product_name); ?>" />
+                            <input type="submit" name="delete" value="Supprimer">
+
+                        </form>
                 </tr>
                 
             
