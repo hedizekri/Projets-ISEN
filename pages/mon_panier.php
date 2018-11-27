@@ -106,7 +106,7 @@ require('outils.php') ;
 
       <?php
 
-          if(isset($_GET['name'],$_GET['unit_price'],$_GET['quantity'],$_GET['image'])){
+          if(isset($_GET['cart'], $_GET['name'],$_GET['unit_price'],$_GET['quantity'],$_GET['image'])){
           $unit_price = $_GET['unit_price'];
           $product_name = $_GET['name'];
           $quantity = $_GET['quantity'];
@@ -119,7 +119,7 @@ require('outils.php') ;
           $product_quantity = $reponse->fetch();
           if(!empty($product_quantity)) {
 
-           $nvquantity = $product_quantity['quantity'] + 1;
+           $nvquantity = $product_quantity['quantity'] + $quantity;
 
               $req = $bdd->prepare('UPDATE orders2 SET quantity = :nvquantity WHERE product_name = :product_name AND identifiant = :identifiant');
 

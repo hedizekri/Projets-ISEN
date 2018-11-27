@@ -136,33 +136,29 @@ require('outils.php') ;
                     <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
                     <th><?php echo $nom['description']; ?></th>
                     <th><?php echo $nom['unit_price']; ?>,00€</th>
+                    <?php 
+
+                    $name = $nom['name'];
+                    $image = $nom['image'];
+                    $unit_price = $nom['unit_price'];
+
+                    ?>
                     <th>
 
                         <form action="mon_panier.php" method="GET">
                             
                             <input type="number" name="quantity" min="0" max="100" step="1" value="1" size="2">
-                            <input type="submit" name="Ajouter au panier">
+                            <input type="hidden" name="name" value="<?php echo($name); ?>" />
+                            <input type="hidden" name="unit_price" value="<?php echo($unit_price); ?>" />
+                            <input type="hidden" name="image" value="<?php echo($image); ?>" />
+                            <input type="submit" name="cart" value="Ajouter au panier">
 
                         </form>
-
-                        <?php
-                        $quantity = 1;
-                        echo '<a href="mon_panier.php?name=', urlencode($nom['name']), '&unit_price=', urlencode($nom['unit_price']), '&quantity=', urlencode($quantity), '&image=', urlencode($nom['image']), '">ajouter au panier</a>';
-                        ?>
 
 
 
 
                     </th>
-
-                    <!-- <th>
-                        <form method="Post" action="mon_panier.php">
-                            <input type="text" name="quantity" value="1" size="2" />
-                            <br/>
-                            <br/>
-                            <input type="submit" name="panier" value="Ajouter a mon panier">
-                        </form>
-                    </th> -->
                 </tr>
                 
             
@@ -211,11 +207,24 @@ require('outils.php') ;
                 <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
                 <th><?php echo $nom['description']; ?></th>
                 <th><?php echo $nom['unit_price']; ?>,00€</th>
-                <th>
-                    <?php
-                        $quantity = 1;
-                        echo '<a href="mon_panier.php?name=', urlencode($nom['name']), '&unit_price=', urlencode($nom['unit_price']), '&quantity=', urlencode($quantity), '&image=', urlencode($nom['image']), '">ajouter au panier</a>';
-                        ?>
+                <?php 
+
+                    $name = $nom['name'];
+                    $image = $nom['image'];
+                    $unit_price = $nom['unit_price'];
+
+                    ?>
+                    <th>
+
+                        <form action="mon_panier.php" method="GET">
+                            
+                            <input type="number" name="quantity" min="0" max="100" step="1" value="1" size="2">
+                            <input type="hidden" name="name" value="<?php echo($name); ?>" />
+                            <input type="hidden" name="unit_price" value="<?php echo($unit_price); ?>" />
+                            <input type="hidden" name="image" value="<?php echo($image); ?>" />
+                            <input type="submit" name="cart" value="Ajouter au panier">
+
+                        </form>
                 </th>
             </tr>
             
@@ -258,11 +267,24 @@ require('outils.php') ;
                 <th><?php echo '<img id="imageddb" src="'; echo $nom['image']; echo '" />'; ?></th>
                 <th><?php echo $nom['description']; ?></th>
                 <th><?php echo $nom['unit_price']; ?>,00€</th>
-                <th>
-                    <?php
-                        $quantity = 1;
-                        echo '<a href="mon_panier.php?name=', urlencode($nom['name']), '&unit_price=', urlencode($nom['unit_price']), '&quantity=', urlencode($quantity), '&image=', urlencode($nom['image']), '">ajouter au panier</a>';
-                        ?>
+                <?php 
+
+                    $name = $nom['name'];
+                    $image = $nom['image'];
+                    $unit_price = $nom['unit_price'];
+
+                    ?>
+                    <th>
+
+                        <form action="mon_panier.php" method="GET">
+                            
+                            <input type="number" name="quantity" min="0" max="100" step="1" value="1" size="2">
+                            <input type="hidden" name="name" value="<?php echo($name); ?>" />
+                            <input type="hidden" name="unit_price" value="<?php echo($unit_price); ?>" />
+                            <input type="hidden" name="image" value="<?php echo($image); ?>" />
+                            <input type="submit" name="cart" value="Ajouter au panier">
+
+                        </form>
                 </th>
             </tr>
             
