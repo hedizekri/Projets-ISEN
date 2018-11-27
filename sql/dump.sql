@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 27 nov. 2018 à 20:14
+-- Généré le :  mar. 27 nov. 2018 à 20:53
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `faq` (
   `identifiant` varchar(25) NOT NULL,
   `message` varchar(128) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `faq`
@@ -44,7 +44,9 @@ INSERT INTO `faq` (`id`, `identifiant`, `message`) VALUES
 (1, 'Hedi', 'Bonjour à tous, aujourd\'hui on est le 23 novembre et c\'est mon anniversaire !'),
 (2, 'Alhinc', 'Bonjour Hedi, tu as quel âge ?'),
 (3, 'Hedi', '22 ans ! Je suis un grand garçon maintenant !'),
-(4, 'hubert', 'Les gars vous avez signé pour moi en tech web ?');
+(4, 'hubert', 'Les gars vous avez signé pour moi en tech web ?'),
+(5, 'zekriledozo', 'Alhinc, hubert vous avez rien branlé du projet y\'a moy vous faites le rapport au moins ?'),
+(6, 'clementleratpi', 'quelqu\'un comprend qqch à leur histoire d\'index.php ? la vie c\'est pas faisable');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `prenom` varchar(32) DEFAULT NULL,
   `date` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `membres`
@@ -72,7 +74,8 @@ INSERT INTO `membres` (`id`, `identifiant`, `mdp`, `mail`, `nom`, `prenom`, `dat
 (2, 'zekriledozo', 'a6b6476abe1065b49f96927ad2c36fb5', 'hedilezekri@mail.com', 'Zekri', 'Hedi', '23/04/1995'),
 (3, 'b2oba', '236e92bcf7c04d8d7ff3f798b537823f', 'clementvillalba@mail.com', 'villalba', 'clement', '28/02/1995'),
 (4, 'docgyneco', '9a09b4dfda82e3e665e31092d1c3ec8d', 'ledoc@mail.com', 'Gyneco', 'Doc', '25/05/1980'),
-(5, 'djmarky', 'c70ab1cfea1534c3f27d7ea9eb0c9b9e', 'djmarky@mail.com', 'marky', 'dj', '27/10/1980');
+(5, 'djmarky', 'c70ab1cfea1534c3f27d7ea9eb0c9b9e', 'djmarky@mail.com', 'marky', 'dj', '27/10/1980'),
+(6, 'clementleratpi', '236e92bcf7c04d8d7ff3f798b537823f', 'clementlevilalba@mail.com', 'Villalba', 'Clement', '28/02/1995');
 
 -- --------------------------------------------------------
 
@@ -89,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `orders2` (
   `quantity` int(11) NOT NULL,
   `image` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `orders2`
@@ -104,6 +107,7 @@ INSERT INTO `orders2` (`id`, `identifiant`, `product_name`, `unit_price`, `quant
 (26, 'zekriledozo', 'Gucci Reebok Classic', 390, 1, '../images/images produit/5.png'),
 (22, 'zekriledozo', 'Veste Zara - Dynamique Style', 400, 10, '../images/images produit/2.png'),
 (23, 'zekriledozo', 'Thunder Boots Limited', 1299, 4, '../images/images produit/7.png'),
+(27, 'zekriledozo', 'Jason Shirt Gondra', 1395, 3, '../images/images produit/1.png'),
 (25, 'zekriledozo', 'Balenciaga X_PLR Deluxe', 599, 6, '../images/images produit/6.png');
 
 -- --------------------------------------------------------
