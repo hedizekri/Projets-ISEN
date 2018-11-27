@@ -219,10 +219,12 @@ require('outils.php') ;
 
     <form action="faq.php" method="post">
         <p>
-        <label for="message">Message</label> :  <input type="text" name="message" id="message" maxlength="128" size="64" /><br />
-
-        <input type="submit" value="Envoyer" />
-  </p>
+          <label>Message : </label> 
+          <textarea name="message" id="message" maxlength="128" rows="8" cols="45"></textarea>
+          </br>
+          </br>
+          <input type="submit" value="Envoyer" />
+        </p>
     </form>
 
     <?php

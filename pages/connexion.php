@@ -111,8 +111,9 @@ if(isset($_POST['connexion'])) {
 
                     echo "Bonjour ". $_SESSION["identifiant"] ."";
 
+
                     ?>
-                    <meta http-equiv="refresh" content="1; URL=connexion.php" />
+                    <meta http-equiv="refresh" content="1; URL=accueil.php" />
                     <?php
                 }
             }
